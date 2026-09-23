@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – BrainUp</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --text-color: #333333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --code-bg: #eef2f5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 2em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.3em;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            color: #d63384;
+        }
+
+        a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Privacy Policy – BrainUp</h1>
+
+        <h2>1. Data Collection and Use</h2>
+        <p>The BrainUp application is designed to operate completely offline. We do not collect, store, track, or share any personal data, device identifiers, or usage information. All of your alarms, settings, and game/puzzle data remain stored exclusively on your device.</p>
+
+        <h2>2. Permissions Requested</h2>
+        <p>BrainUp requests only the system permissions strictly necessary for the alarm clock functionality:</p>
+        <ul>
+            <li><code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code>: To trigger the alarm sound at the exact time selected.</li>
+            <li><code>RECEIVE_BOOT_COMPLETED</code>: To reschedule your alarms if the device restarts.</li>
+            <li><code>USE_FULL_SCREEN_INTENT</code>: To display the alarm dismissal screen and puzzle over the lock screen.</li>
+        </ul>
+
+        <h2>3. Contact</h2>
+        <p>For any questions regarding this policy, please contact: <a href="mailto:contact.zielh.app@gmail.com">contact.zielh.app@gmail.com</a></p>
+    </div>
+
+</body>
+</html>
