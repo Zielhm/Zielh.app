@@ -2,30 +2,139 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Suppression de compte - AgriCoop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriCoop — Confidentialité et Gestion du Compte</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; line-height: 1.6; }
-        h1 { color: #2e7d32; }
-        .box { background: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px; }
+        :root {
+            --primary: #2e7d32;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #212529;
+            --text-muted: #6c757d;
+            --border: #e9ecef;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+            margin-top: 35px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .action-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>Demande de suppression de compte — AgriCoop</h1>
-    <p>Conformément aux règles de confidentialité, vous pouvez demander à tout moment la suppression définitive de votre compte utilisateur <strong>AgriCoop</strong> et de l'ensemble de vos données associées.</p>
-    
-    <div class="box">
-        <h3>Comment faire une demande ?</h3>
-        <p>Envoyez un e-mail à l'adresse suivante : <strong>contact.zielh.app@gmail.com</strong></p>
-        <p><strong>Objet :</strong> Demande de suppression de compte AgriCoop</p>
-        <p><strong>Contenu :</strong> Indiquez l'adresse e-mail associée à votre compte AgriCoop.</p>
-    </div>
 
-    <h3>Données supprimées :</h3>
-    <ul>
-        <li>Informations de profil (nom, prénom, e-mail, téléphone).</li>
-        <li>Identifiant unique d'utilisateur (UID Firebase).</li>
-        <li>Historique de vos réservations et signalements.</li>
-    </ul>
-    <p><em>Traitement effectué sous un délai maximum de 30 jours.</em></p>
+<div class="container">
+    <h1>AgriCoop</h1>
+    <p class="subtitle">Politique de Confidentialité et Suppression des Données Utilisateur</p>
+
+    <!-- SECTION 1 : POLITIQUE DE CONFIDENTIALITÉ -->
+    <section id="privacy">
+        <h2>1. Politique de Confidentialité</h2>
+        <p>Cette politique explique comment l'application <strong>AgriCoop</strong> collecte, utilise et protège vos données personnelles.</p>
+
+        <h3>Données collectées</h3>
+        <p>Dans le cadre de la gestion du matériel partagé, nous collectons les informations suivantes :</p>
+        <ul>
+            <li><strong>Informations d'identification :</strong> Nom, prénom, adresse e-mail, numéro de téléphone.</li>
+            <li><strong>Identifiants techniques :</strong> Identifiant unique d'utilisateur (UID Firebase).</li>
+            <li><strong>Données d'utilisation :</strong> Historique de vos réservations, déclarations d'incidents et relevés de compteurs sur les équipements.</li>
+        </ul>
+
+        <h3>Utilisation et hébergement des données</h3>
+        <p>Vos données sont exclusivement utilisées pour assurer le service de réservation et le suivi du matériel au sein de la coopérative. Elles sont hébergées de manière sécurisée sur les infrastructures <strong>Google Firebase (Firestore et Firebase Authentication)</strong>. Aucune donnée n'est vendue ni transmise à des tiers à des fins commerciales.</p>
+
+        <h3>Sécurité</h3>
+        <p>Toutes les communications entre l'application et la base de données sont chiffrées en transit via le protocole HTTPS / TLS.</p>
+    </section>
+
+    <!-- SECTION 2 : SUPPRESSION DU COMPTE -->
+    <section id="delete">
+        <h2>2. Demande de Suppression de Compte et des Données</h2>
+        <p>Conformément aux règles de protection des données et aux exigences du Google Play Store, vous pouvez demander à tout moment la suppression définitive de votre compte utilisateur <strong>AgriCoop</strong> sans avoir à réinstaller l'application.</p>
+
+        <div class="action-box">
+            <h3 style="margin-top: 0;">Procédure de demande :</h3>
+            <p>Pour faire supprimer votre compte, envoyez simplement un courriel à l'adresse suivante :</p>
+            <p><strong>E-mail de contact :</strong> <a href="mailto:votre-email@domaine.com">contact.zielh.app@gmail.com</a></p>
+            <p><strong>Objet du message :</strong> Supprimer mon compte AgriCoop</p>
+            <p><strong>Information requise :</strong> Indiquez l'adresse e-mail associée à votre compte dans l'application.</p>
+        </div>
+
+        <h3>Conséquences de la suppression :</h3>
+        <p>Une fois votre demande traitée (sous un délai maximum de 30 jours) :</p>
+        <ul>
+            <li>Votre profil utilisateur (nom, prénom, e-mail, téléphone) sera définitivement effacé.</li>
+            <li>Votre identifiant d'authentification Firebase sera supprimé.</li>
+            <li>Vos réservations passées et à venir seront dissociées de votre identité personnelle.</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; 2026 AgriCoop. Tous droits réservés.
+    </footer>
+</div>
+
 </body>
 </html>
