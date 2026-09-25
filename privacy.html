@@ -63,6 +63,7 @@
             width: 32px;
             height: 32px;
             border-radius: 6px;
+            object-fit: cover;
         }
 
         .nav-links {
@@ -152,6 +153,16 @@
             font-weight: 500;
         }
 
+        a.link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a.link:hover {
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
             margin-top: 4rem;
@@ -175,8 +186,9 @@
             <div class="nav-links">
                 <a href="index.html">Accueil</a>
                 <a href="about.html">À propos</a>
+                <a href="services.html">Services</a>
                 <a href="portfolio.html">Portfolio</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="contact.html">Contact</a>
             </div>
         </nav>
 
@@ -225,12 +237,12 @@
             <h2>6. Vos droits (RGPD)</h2>
             <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez à tout moment d'un droit d'accès, de rectification et de suppression des messages et échanges email que vous nous avez adressés.</p>
             <p>Pour exercer ce droit, il vous suffit de nous contacter directement par email à : <br>
-            <a href="mailto:contact.zielh.app@gmail.com" style="color: var(--accent-color); font-weight: 600;">contact.zielh.app@gmail.com</a></p>
+            <a href="mailto:contact.zielh.app@gmail.com" class="link">contact.zielh.app@gmail.com</a></p>
 
         </main>
 
         <footer>
-            <p>&copy; 2026 Zielh Apps. Tous droits réservés.</p>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html" class="link">Mentions Légales</a> | <a href="privacy.html" class="link">Confidentialité</a></p>
         </footer>
     </div>
 
