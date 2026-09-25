@@ -64,6 +64,7 @@
             width: 32px;
             height: 32px;
             border-radius: 6px;
+            object-fit: cover;
         }
 
         .nav-links {
@@ -164,6 +165,16 @@
         .project-icon {
             font-size: 2rem;
             line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
         }
 
         .project-title {
@@ -223,6 +234,16 @@
             content: "✓";
             color: var(--accent-color);
             font-weight: bold;
+        }
+
+        a.link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a.link:hover {
+            text-decoration: underline;
         }
 
         /* Contact Box */
@@ -286,8 +307,9 @@
             <div class="nav-links">
                 <a href="index.html">Accueil</a>
                 <a href="about.html">À propos</a>
+                <a href="services.html">Services</a>
                 <a href="portfolio.html" class="active">Portfolio</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="contact.html">Contact</a>
             </div>
         </nav>
 
@@ -348,7 +370,9 @@
                 <div>
                     <div class="project-header">
                         <div class="project-title-group">
-                            <span class="project-icon">🐓</span>
+                            <span class="project-icon">
+                                <img src="assets/image/coqpit.jpg" alt="Coq'Pit Logo">
+                            </span>
                             <h2 class="project-title">Coq'Pit</h2>
                         </div>
                         <span class="tag tag-pro">Gestion Avicole</span>
@@ -369,7 +393,9 @@
                 <div>
                     <div class="project-header">
                         <div class="project-title-group">
-                            <span class="project-icon">🌾</span>
+                            <span class="project-icon">
+                                <img src="assets/image/agricoop.jpg" alt="AgriCoop Logo">
+                            </span>
                             <h2 class="project-title">AgriCoop</h2>
                         </div>
                         <span class="tag tag-pro">Outil Métier</span>
@@ -397,7 +423,7 @@
         </section>
 
         <footer>
-            <p>&copy; 2026 Zielh Apps. Tous droits réservés.</p>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html" class="link">Mentions Légales</a> | <a href="privacy.html" class="link">Confidentialité</a></p>
         </footer>
     </div>
 
