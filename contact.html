@@ -3,438 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demande de Devis & Contact - Zielh Apps</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
-
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --accent-color: #2563eb;
-            --accent-hover: #1d4ed8;
-            --border-color: #e2e8f0;
-            --radius: 12px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            margin: 0;
-            padding: 2rem 1rem;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Navigation Header */
-        nav.navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 800;
-            font-size: 1.25rem;
-        }
-
-        .nav-logo img {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent-color);
-        }
-
-        /* Hero Section */
-        header.hero {
-            text-align: center;
-            padding: 1rem 1rem 2.5rem 1rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #dbeafe;
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 0.35rem 0.85rem;
-            border-radius: 9999px;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin: 0 0 1rem 0;
-            color: var(--text-primary);
-            letter-spacing: -0.025em;
-        }
-
-        p.subtitle {
-            color: var(--text-secondary);
-            font-size: 1.15rem;
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        /* Layout Grid */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.6fr;
-            gap: 2rem;
-            margin-bottom: 3.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Info Card */
-        .info-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 1.75rem;
-            box-shadow: var(--shadow);
-            height: fit-content;
-        }
-
-        .info-card h2 {
-            font-size: 1.3rem;
-            margin-top: 0;
-            margin-bottom: 1.25rem;
-            color: var(--text-primary);
-        }
-
-        .info-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .info-label {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent-color);
-            margin-bottom: 0.25rem;
-        }
-
-        .info-value {
-            color: var(--text-primary);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .info-value a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s ease;
-        }
-
-        .info-value a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Form Card */
-        .form-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 2rem;
-            box-shadow: var(--shadow);
-        }
-
-        .form-card h2 {
-            font-size: 1.3rem;
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        @media (max-width: 500px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.4rem;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            background-color: #fff;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        button.btn-submit {
-            width: 100%;
-            background-color: var(--accent-color);
-            color: white;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 0.85rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-        }
-
-        button.btn-submit:hover {
-            background-color: var(--accent-hover);
-        }
-
-        button.btn-submit:active {
-            transform: scale(0.99);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
-        }
-    </style>
+    <title>Contact - Mon Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="container">
-
-        <!-- Barre de Navigation -->
-        <nav class="navbar">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
-                <span>Zielh</span>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/image/logo.jpg" alt="Logo Portfolio" class="logo-img">
             </a>
-            <div class="nav-links">
-                <a href="index.html">Accueil</a>
-                <a href="about.html">À propos</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html" class="active">Contact</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Contact -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Contactez-moi</h1>
+            <p>Un projet, une question ou une idée d'application web à concrétiser ? Discutons-en !</p>
+        </div>
+    </section>
+
+    <!-- Section Contact Main -->
+    <section class="contact-section">
+        <div class="container contact-grid">
+            
+            <!-- Informations de contact -->
+            <div class="contact-info">
+                <h2>Mes Coordonnées</h2>
+                <p>N'hésitez pas à me contacter directement par e-mail ou via le formulaire ci-contre.</p>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h3>E-mail</h3>
+                        <p><a href="mailto:contact@exemple.com">contact@exemple.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h3>Localisation</h3>
+                        <p>France</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <h3>Disponibilité</h3>
+                        <p>Du lundi au vendredi, 9h00 - 18h00</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h3>Retrouvez-moi sur</h3>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
             </div>
-        </nav>
 
-        <!-- En-tête -->
-        <header class="hero">
-            <span class="badge">Un projet en tête ?</span>
-            <h1>Contact & Demande de Devis</h1>
-            <p class="subtitle">Discutons de vos besoins d'applications mobiles, d'outils métiers ou de sites web sur mesure.</p>
-        </header>
-
-        <div class="contact-grid">
-
-            <!-- Informatives Directes -->
-            <div class="info-card">
-                <h2>Renseignements</h2>
-
-                <div class="info-item">
-                    <div class="info-label">Email Professionnel</div>
-                    <div class="info-value">
-                        <a href="mailto:contact.zielh.app@gmail.com">contact.zielh.app@gmail.com</a>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-label">Localisation</div>
-                    <div class="info-value">
-                        Nouvelle-Aquitaine, France<br>
-                        <span style="color: var(--text-secondary); font-size: 0.875rem;">(Landes / Pyrénées-Atlantiques)</span>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-label">Zone d'intervention</div>
-                    <div class="info-value">
-                        • France entière (À distance)<br>
-                        • En présentiel selon le projet & la région
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-label">Délais de réponse</div>
-                    <div class="info-value" style="color: var(--text-secondary); font-size: 0.9rem;">
-                        Réponse sous 24h à 48h ouvrées.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Formulaire de Devis -->
-            <div class="form-card">
-                <h2>Formulaire de Projet</h2>
-                <form id="quoteForm">
+            <!-- Formulaire de contact -->
+            <div class="contact-form-container">
+                <h2>Envoyer un message</h2>
+                <form action="#" method="POST" class="contact-form">
                     
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Votre Nom / Entreprise *</label>
-                            <input type="text" id="name" required placeholder="ex: Jean Dupont">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Votre Email *</label>
-                            <input type="email" id="email" required placeholder="nom@exemple.fr">
-                        </div>
+                    <div class="form-group">
+                        <label for="name">Nom complet *</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="projectType">Type de Projet *</label>
-                        <select id="projectType" required>
-                            <option value="" disabled selected>Sélectionnez un type de projet...</option>
-                            <option value="Application Mobile Android">Application Mobile Android Sur Mesure</option>
-                            <option value="Site Web Vitrine">Site Web Vitrine / Application Web</option>
-                            <option value="Refonte / Passage Hors-ligne">Refonte d'outil / Passage en mode déconnecté</option>
-                            <option value="Autre / Conseil">Autre besoin ou conseil technique</option>
+                        <label for="email">Adresse E-mail *</label>
+                        <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-type">Type de projet</label>
+                        <select id="project-type" name="project-type">
+                            <option value="">-- Sélectionnez une option --</option>
+                            <option value="web-app">Application Web / Interface Navigateur (.html)</option>
+                            <option value="scripts-automation">Scripts, Automatisation & Prototypage rapide</option>
+                            <option value="mobile-app">Application Mobile</option>
+                            <option value="consulting">Conseil & Audit</option>
+                            <option value="other">Autre demande</option>
                         </select>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="budget">Budget Estimé</label>
-                            <select id="budget">
-                                <option value="Non défini">Non défini / À évaluer</option>
-                                <option value="Moins de 1 000 €">&lt; 1 000 €</option>
-                                <option value="1 000 € - 3 000 €">1 000 € - 3 000 €</option>
-                                <option value="Plus de 3 000 €">&gt; 3 000 €</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="timeline">Délai Souhaité</label>
-                            <select id="timeline">
-                                <option value="Dès que possible">Dès que possible</option>
-                                <option value="Dans le mois">Sous 1 mois</option>
-                                <option value="D'ici 1 à 3 mois">1 à 3 mois</option>
-                                <option value="Pas de date fixe">Projet à moyen terme</option>
-                            </select>
-                        </div>
-                    </div>
-
                     <div class="form-group">
-                        <label for="message">Description du Besoin *</label>
-                        <textarea id="message" required placeholder="Décrivez rapidement l'objectif de votre projet, les fonctionnalités souhaitées ou vos contraintes métiers..."></textarea>
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Décrivez votre besoin ou votre projet d'application HTML/Web..." required></textarea>
                     </div>
 
-                    <button type="submit" class="btn-submit">Envoyer la demande</button>
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+                    </button>
                 </form>
             </div>
 
         </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2026 Zielh Apps. Tous droits réservés.</p>
-        </footer>
-    </div>
-
-    <script>
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const type = document.getElementById('projectType').value;
-            const budget = document.getElementById('budget').value;
-            const timeline = document.getElementById('timeline').value;
-            const description = document.getElementById('message').value;
-
-            const subject = encodeURIComponent(`[Devis Zielh] ${type} - ${name}`);
-            const body = encodeURIComponent(
-                `Bonjour Zielh Apps,\n\n` +
-                `Voici les détails de ma demande de devis :\n\n` +
-                `• Nom / Entreprise : ${name}\n` +
-                `• Email de contact : ${email}\n` +
-                `• Type de projet : ${type}\n` +
-                `• Budget estimé : ${budget}\n` +
-                `• Délai souhaité : ${timeline}\n\n` +
-                `Description du besoin :\n${description}\n\n` +
-                `Cordialement,\n${name}`
-            );
-
-            // Ouvre le client mail par défaut pré-rempli
-            window.location.href = `mailto:contact.zielh.app@gmail.com?subject=${subject}&body=${body}`;
-        });
-    </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Tous droits réservés.</p>
+            <ul class="footer-links">
+                <li><a href="mentions-legales.html">Mentions légales</a></li>
+                <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 </html>
