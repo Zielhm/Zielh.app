@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page non trouvée - Zielh Apps</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Theme Variables & Minimalist Custom Styles -->
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+        }
+
+        .clean-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .clean-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .btn-accent:hover {
+            background-color: #1d4ed8;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="assets/image/favicon.jpg" alt="Zielh Logo" class="w-9 h-9 rounded-lg object-cover border border-slate-200 group-hover:scale-105 transition-transform duration-200" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2563eb/ffffff?text=Z';">
+                    <span class="text-xl font-bold tracking-tight text-slate-900">Zielh</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Accueil</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">À propos</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Services</a>
+            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Portfolio</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content / 404 Section -->
+    <main class="flex-grow flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl w-full text-center">
+            
+            <!-- Badge 404 -->
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-6">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>Erreur 404</span>
+            </div>
+
+            <!-- Big Title -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
+                Page introuvable
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg mx-auto mb-8">
+                Désolé, la page que vous cherchez n'existe pas ou a été déplacée. Vous pouvez retourner à l'accueil ou naviguer directement vers l'une de nos rubriques.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <a href="index.html" class="btn-accent w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-house text-xs"></i>
+                    <span>Retourner à l'accueil</span>
+                </a>
+                <a href="portfolio.html" class="btn-outline w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-layer-group text-xs text-slate-500"></i>
+                    <span>Voir le portfolio</span>
+                </a>
+            </div>
+
+            <!-- Quick Links Box -->
+            <div class="clean-card p-6 text-left max-w-md mx-auto">
+                <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Raccourcis utiles</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>
+                        <a href="services.html" class="text-slate-700 hover:text-blue-600 flex items-center justify-between py-1 transition-colors">
+                            <span>Nos services &amp; compétences</span>
+                            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                        </a>
+                    </li>
+                    <li class="border-t border-slate-100 pt-2">
+                        <a href="about.html" class="text-slate-700 hover:text-blue-600 flex items-center justify-between py-1 transition-colors">
+                            <span>À propos de Zielh Apps</span>
+                            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                        </a>
+                    </li>
+                    <li class="border-t border-slate-100 pt-2">
+                        <a href="contact.html" class="text-slate-700 hover:text-blue-600 flex items-center justify-between py-1 transition-colors">
+                            <span>Nous contacter</span>
+                            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-500 text-center md:text-left">
+                &copy; 2026 Zielh Apps. Tous droits réservés.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
+                <a href="mentions-legales.html" class="hover:text-slate-900 transition-colors">Mentions Légales</a>
+                <span class="text-slate-300">|</span>
+                <a href="privacy.html" class="hover:text-slate-900 transition-colors">Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
