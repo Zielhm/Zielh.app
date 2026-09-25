@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Zielh Apps</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Header */
+        nav.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        header.hero {
+            text-align: center;
+            padding: 1rem 1rem 3rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 1rem 0;
+            color: var(--text-primary);
+            letter-spacing: -0.025em;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2.section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Feature & Content Cards */
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Scope Box / Highlight */
+        .scope-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-color);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.75rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .scope-card h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .scope-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            margin-top: 0;
+            font-size: 1.75rem;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            max-width: 500px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .email-link {
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #60a5fa;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #334155;
+            border-radius: var(--radius);
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .email-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #60a5fa;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Barre de Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
+                <span>Zielh</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="about.html" class="active">À propos</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </nav>
+
+        <!-- En-tête Hero -->
+        <header class="hero">
+            <span class="badge">Notre Histoire & Philosophie</span>
+            <h1>Qui sommes-nous ?</h1>
+            <p class="subtitle">Une équipe à taille humaine dédiée à la création d'applications légères, utiles et respectueuses des utilisateurs.</p>
+        </header>
+
+        <!-- Notre Mission & Démarche -->
+        <section>
+            <h2 class="section-title">Notre Démarche</h2>
+            <div class="grid">
+                <div class="feature-card">
+                    <h3>🛠️ Des Outils Utiles & Ciblés</h3>
+                    <p>Nous concevons des solutions sur mesure pour répondre à des besoins précis, qu'il s'agisse de professionnels, d'organisations locales ou d'utilisateurs individuels.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚫 Alternance Sanitaires aux Publicités</h3>
+                    <p>Nous développons des alternatives épurées face aux applications du marché devenues surchargées d'annonces, de traceurs ou d'abonnements abusifs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔍 Relecture du Code Assistée par IA</h3>
+                    <p>Nous intégrons des outils d'intelligence artificielle avancés dans nos processus d'assurance qualité afin d'auditer, relire et optimiser la stabilité de nos lignes de code.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notre Périmètre d'Intervention -->
+        <section>
+            <h2 class="section-title">Périmètre d'Intervention</h2>
+            
+            <div class="scope-card">
+                <h3>Focus sur les applications métier et utilitaires du quotidien</h3>
+                <p>Notre savoir-faire se concentre sur les applications utilitaires, le fonctionnement hors-ligne (offline-first), la gestion de données locales et l'ergonomie utilisateur fluide.</p>
+            </div>
+
+            <div class="scope-card" style="border-left-color: #64748b;">
+                <h3>Transparence sur nos compétences & limites</h3>
+                <p>Afin de maintenir des standards élevés sur nos projets, nous faisons le choix explicite de <strong>ne pas développer</strong> d'applications à très haute contrainte réglementaire bancaire ou critique (systèmes de paiement direct style banque en ligne, coffres-forts bancaires agréés).</p>
+            </div>
+        </section>
+
+        <!-- Section Contact / Appel à l'action -->
+        <section id="contact">
+            <div class="contact-box">
+                <h2>Un projet à nous soumettre ?</h2>
+                <p>Que vous ayez besoin d'une application sur mesure pour votre structure ou d'un outil épuré pour simplifier votre quotidien, nous sommes à votre écoute.</p>
+                <a href="mailto:contact.zielh.app@gmail.com" class="email-link">contact.zielh.app@gmail.com</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
