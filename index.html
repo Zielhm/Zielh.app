@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zielh Apps - Développement d'Applications Sur Mesure</title>
+    <title>Zielh Apps - Développement d'Applications Android Sur Mesure</title>
     
     <!-- Intégration du Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
@@ -36,7 +36,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
         }
 
@@ -89,7 +89,7 @@
         /* Hero Section */
         header.hero {
             text-align: center;
-            padding: 1rem 1rem 3rem 1rem;
+            padding: 2rem 1rem 3.5rem 1rem;
             margin-bottom: 2rem;
         }
 
@@ -120,13 +120,22 @@
             margin: 0 0 1rem 0;
             color: var(--text-primary);
             letter-spacing: -0.025em;
+            line-height: 1.2;
         }
 
         p.subtitle {
             color: var(--text-secondary);
             font-size: 1.2rem;
-            max-width: 650px;
-            margin: 0 auto 1.5rem auto;
+            max-width: 680px;
+            margin: 0 auto 1.75rem auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .cta-button {
@@ -145,18 +154,53 @@
             transform: translateY(-1px);
         }
 
+        .secondary-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .secondary-button:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
         /* Sections */
         section {
-            margin-bottom: 3.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
         }
 
         h2.section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.25rem;
+            font-size: 1.6rem;
+            margin: 0;
             color: var(--text-primary);
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .see-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .see-more:hover {
+            text-decoration: underline;
         }
 
         .grid {
@@ -170,7 +214,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
-            padding: 1.5rem;
+            padding: 1.75rem 1.5rem;
             box-shadow: var(--shadow);
         }
 
@@ -186,7 +230,7 @@
             margin-bottom: 0;
         }
 
-        /* App / Policy Cards */
+        /* App Cards */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -197,7 +241,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            overflow: hidden;
         }
 
         .card:hover {
@@ -205,18 +248,37 @@
             box-shadow: var(--shadow-hover);
         }
 
+        .card-header-app {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
         .app-icon {
-            width: 64px;
-            height: 64px;
+            width: 56px;
+            height: 56px;
             object-fit: cover;
             border-radius: 12px;
-            margin-bottom: 1rem;
             border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .app-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            background-color: #f1f5f9;
+            color: var(--text-secondary);
+            border-radius: 4px;
+            margin-bottom: 0.25rem;
         }
 
         .card h3 {
-            margin-top: 0;
-            font-size: 1.25rem;
+            margin: 0;
+            font-size: 1.2rem;
             color: var(--text-primary);
         }
 
@@ -227,23 +289,30 @@
             margin-bottom: 1.5rem;
         }
 
-        .card a {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            background-color: #f1f5f9;
-            color: var(--text-primary);
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .card-actions a {
+            flex: 1;
+            padding: 0.6rem 1rem;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 500;
+            font-size: 0.9rem;
             text-align: center;
-            border: 1px solid var(--border-color);
-            transition: background-color 0.2s ease, color 0.2s ease;
+            transition: all 0.2s ease;
         }
 
-        .card a:hover {
-            background-color: var(--accent-color);
-            color: white;
-            border-color: var(--accent-color);
+        .btn-secondary {
+            background-color: #f1f5f9;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
         }
 
         /* Contact Section */
@@ -251,7 +320,7 @@
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
             border-radius: var(--radius);
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
@@ -262,26 +331,24 @@
 
         .contact-box p {
             color: #94a3b8;
-            max-width: 500px;
-            margin: 0 auto 1.5rem auto;
+            max-width: 520px;
+            margin: 0 auto 1.75rem auto;
         }
 
         .email-link {
             display: inline-block;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            color: #60a5fa;
+            color: #ffffff;
             text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid #334155;
+            padding: 0.8rem 1.75rem;
             border-radius: var(--radius);
-            background-color: rgba(255, 255, 255, 0.05);
-            transition: background-color 0.2s ease, border-color 0.2s ease;
+            background-color: var(--accent-color);
+            transition: background-color 0.2s ease;
         }
 
         .email-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: #60a5fa;
+            background-color: var(--accent-hover);
         }
 
         footer {
@@ -303,11 +370,11 @@
 
     <div class="container">
 
-        <!-- Barre de Navigation -->
+        <!-- Navigation Navbar -->
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
                 <img src="assets/image/logo.jpg" alt="Zielh Logo">
-                <span>Zielh</span>
+                <span>Zielh Apps</span>
             </a>
             <div class="nav-links">
                 <a href="index.html" class="active">Accueil</a>
@@ -318,71 +385,97 @@
             </div>
         </nav>
 
-        <!-- En-tête Vitrine -->
+        <!-- Hero Section -->
         <header class="hero">
-            <img src="assets/image/logo.jpg" alt="Zielh Logo Principal" class="hero-logo">
+            <img src="assets/image/logo.jpg" alt="Zielh Apps Logo" class="hero-logo">
             <br>
-            <span class="badge">Développement Mobile & Solutions Sur Mesure</span>
-            <h1>Création d'Applications Performantes & Intuitives</h1>
-            <p class="subtitle">Nous concevons des applications mobiles modernes, fluides et orientées utilisateur, du prototype à la publication sur les stores.</p>
-            <a href="contact.html" class="cta-button">Discuter d'un projet</a>
+            <span class="badge">Studio de Développement Android Native</span>
+            <h1>Des Applications Mobile Utiles, Rapides & Respectueuses</h1>
+            <p class="subtitle">Nous concevons et éditons des applications Android haute performance, axées sur l'autonomie hors-ligne (Offline-First) et la protection absolue des données personnelles.</p>
+            <div class="hero-actions">
+                <a href="portfolio.html" class="cta-button">Découvrir nos créations</a>
+                <a href="contact.html" class="secondary-button">Demander un devis</a>
+            </div>
         </header>
 
-        <!-- Nos Domaines d'Expertise -->
+        <!-- Piliers & Savoir-faire -->
         <section>
-            <h2 class="section-title">Notre Savoir-Faire</h2>
+            <div class="section-header">
+                <h2 class="section-title">Notre Engagement Technique</h2>
+            </div>
             <div class="grid">
                 <div class="feature-card">
-                    <h3>📱 Développement Mobile</h3>
-                    <p>Conception d'applications Android rapides, autonomes et optimisées pour offrir une expérience utilisateur fluide.</p>
+                    <h3>📱 Android Natif & Fast Performance</h3>
+                    <p>Développement en Kotlin avec une architecture moderne, garantissant réactivité immédiate et consommation minimale de batterie.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🔒 Respect de la Vie Privée</h3>
-                    <p>Architecture axée sur la protection des données, privilégiant le fonctionnement hors-ligne (offline-first) et la sécurité.</p>
+                    <h3>🔒 Architecture Offline-First</h3>
+                    <p>Vos outils doivent fonctionner partout. Nos applications fonctionnent de manière 100% autonome, sans dépendance serveur inutile.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>⚡ Sur-Mesure & Performance</h3>
-                    <p>Développement de fonctionnalités spécifiques adaptées aux besoins métier et aux contraintes techniques.</p>
+                    <h3>🛡️ Respect de la Vie Privée</h3>
+                    <p>Aucune collecte abusive ni suivi publicitaire. Vos données restent sur votre appareil, sous votre contrôle exclusif.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Applications & Politiques de Confidentialité -->
+        <!-- Applications Vitrines -->
         <section>
-            <h2 class="section-title">Nos Applications & Documents Légaux</h2>
+            <div class="section-header">
+                <h2 class="section-title">Projets & Réalisations</h2>
+                <a href="portfolio.html" class="see-more">Tout voir →</a>
+            </div>
             <div class="grid">
-                <!-- Application AgriCoop -->
+                <!-- BrainUp -->
                 <article class="card">
                     <div>
-                        <img src="assets/image/agricoop.jpg" alt="AgriCoop Icon" class="app-icon">
-                        <h3>AgriCoop</h3>
-                        <p>Politique de confidentialité et traitement des données pour l'application AgriCoop.</p>
+                        <div class="card-header-app">
+                            <img src="assets/image/logo.jpg" alt="BrainUp Icon" class="app-icon">
+                            <div>
+                                <span class="app-tag">Android App</span>
+                                <h3>BrainUp : Réveil & Quizz</h3>
+                            </div>
+                        </div>
+                        <p>Un réveil intelligent et configurable combiné à des quiz stimulants pour réveiller votre esprit dès le matin. Fonctionne entièrement hors-ligne.</p>
                     </div>
-                    <a href="privacy.html">Consulter la politique</a>
+                    <div class="card-actions">
+                        <a href="portfolio.html" class="btn-secondary">Détails</a>
+                        <a href="privacy.html" class="btn-secondary">Confidentialité</a>
+                    </div>
                 </article>
 
-                <!-- Application BrainUp -->
+                <!-- AgriCoop -->
                 <article class="card">
                     <div>
-                        <h3>BrainUp : Réveil & Quizz</h3>
-                        <p>Politique de confidentialité concernant le fonctionnement hors-ligne et le respect de la vie privée.</p>
+                        <div class="card-header-app">
+                            <img src="assets/image/agricoop.jpg" alt="AgriCoop Icon" class="app-icon">
+                            <div>
+                                <span class="app-tag">Solution Métier</span>
+                                <h3>AgriCoop</h3>
+                            </div>
+                        </div>
+                        <p>Application spécialisée dédiée aux coopératives et acteurs du monde agricole pour faciliter le suivi métier et la gestion de proximité.</p>
                     </div>
-                    <a href="privacy.html">Consulter la politique</a>
+                    <div class="card-actions">
+                        <a href="portfolio.html" class="btn-secondary">Détails</a>
+                        <a href="privacy.html" class="btn-secondary">Confidentialité</a>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <!-- Section Contact / Vitrine -->
+        <!-- Call To Action -->
         <section id="contact">
             <div class="contact-box">
-                <h2>Un projet d'application ?</h2>
-                <p>Vous souhaitez développer une application mobile sur mesure ou avez des questions concernant nos projets ? Contactez-nous dès maintenant.</p>
-                <a href="contact.html" class="email-link">Formulaire de contact</a>
+                <h2>Un projet d'application mobile ?</h2>
+                <p>Que ce soit pour le développement complet d'une application sur mesure ou la concrétisation d'un prototype, échangeons sur votre besoin.</p>
+                <a href="contact.html" class="email-link">Prendre contact</a>
             </div>
         </section>
 
+        <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Confidentialité</a></p>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Politiques de Confidentialité</a></p>
         </footer>
     </div>
 
