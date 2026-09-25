@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://zielhm.github.io/Zielh.app/</loc>
+        <lastmod>2026-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Page Services -->
+    <url>
+        <loc>https://zielhm.github.io/Zielh.app/services.html</loc>
+        <lastmod>2026-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Page Portfolio -->
+    <url>
+        <loc>https://zielhm.github.io/Zielh.app/portfolio.html</loc>
+        <lastmod>2026-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Page À propos -->
+    <url>
+        <loc>https://zielhm.github.io/Zielh.app/about.html</loc>
+        <lastmod>2026-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Page Contact -->
+    <url>
+        <loc>https://zielhm.github.io/Zielh.app/contact.html</loc>
+        <lastmod>2026-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Pages Légales & Confidentialité -->
+    <url>
+        <loc>https://zielhm.github.io/Zielh.app/mentions-legales.html</loc>
+        <lastmod>2026-09-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://zielhm.github.io/Zielh.app/privacy.html</loc>
+        <lastmod>2026-09-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
