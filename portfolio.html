@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Réalisations - Zielh Apps</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Header */
+        nav.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        header.hero {
+            text-align: center;
+            padding: 1rem 1rem 3rem 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 1rem 0;
+            color: var(--text-primary);
+            letter-spacing: -0.025em;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        @media (max-width: 500px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .project-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tag-offline {
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+
+        .tag-pro {
+            background-color: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .tag-sec {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        .project-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .project-features li {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-features li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            margin-top: 0;
+            font-size: 1.75rem;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            max-width: 500px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .email-link {
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #60a5fa;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #334155;
+            border-radius: var(--radius);
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .email-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #60a5fa;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
+                <span>Zielh</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="about.html">À propos</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <header class="hero">
+            <span class="badge">Nos Projets</span>
+            <h1>Nos Réalisations</h1>
+            <p class="subtitle">Découvrez les applications mobiles et outils métiers développés par Zielh Apps, axés sur la sobriété, l'autonomie et le respect des données.</p>
+        </header>
+
+        <!-- Liste des Projets -->
+        <div class="projects-grid">
+
+            <!-- 1. BrainUp -->
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title-group">
+                            <span class="project-icon">⏰</span>
+                            <h2 class="project-title">BrainUp</h2>
+                        </div>
+                        <span class="tag tag-offline">100% Offline</span>
+                    </div>
+                    <p class="project-description">
+                        Réveil intelligent combinant réveil-matin et quiz de culture générale pour stimuler l'esprit dès le saut du lit.
+                    </p>
+                    <ul class="project-features">
+                        <li>Fonctionnement entièrement hors-ligne</li>
+                        <li>Aucune publicité ni pistage</li>
+                        <li>Quiz personnalisables et catégories variées</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. Tree Of Life -->
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title-group">
+                            <span class="project-icon">🌳</span>
+                            <h2 class="project-title">Tree Of Life</h2>
+                        </div>
+                        <span class="tag tag-sec">Chiffré & Déconnecté</span>
+                    </div>
+                    <p class="project-description">
+                        Espace personnel regroupant prise de notes, journal intime et gestionnaire de tâches dans un environnement épuré et ultra-sécurisé au niveau local.
+                    </p>
+                    <ul class="project-features">
+                        <li>Stockage et chiffrement local des données</li>
+                        <li>Zéro transfert vers des serveurs externes</li>
+                        <li>Interface sobre et sans distraction publicitaire</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. Coq'Pit -->
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title-group">
+                            <span class="project-icon">🐓</span>
+                            <h2 class="project-title">Coq'Pit</h2>
+                        </div>
+                        <span class="tag tag-pro">Gestion Avicole</span>
+                    </div>
+                    <p class="project-description">
+                        Application de suivi et de gestion de poulailler pensée pour simplifier le pilotage quotidien des élevages et petits cheptels.
+                    </p>
+                    <ul class="project-features">
+                        <li>Suivi de croissance et pesées des volailles</li>
+                        <li>Historique des soins et traitements sanitaires</li>
+                        <li>Suivi des dates d'arrivée, des effectifs et de la ponte</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. AgriCoop -->
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title-group">
+                            <span class="project-icon">🌾</span>
+                            <h2 class="project-title">AgriCoop</h2>
+                        </div>
+                        <span class="tag tag-pro">Outil Métier</span>
+                    </div>
+                    <p class="project-description">
+                        Solution de gestion ciblée facilitant le suivi logistique, la traçabilité et les échanges au sein des coopératives agricoles et exploitations.
+                    </p>
+                    <ul class="project-features">
+                        <li>Gestion des livraisons et stocks en temps réel</li>
+                        <li>Saisie optimisée pour le terrain</li>
+                        <li>Architecture adaptée au mode déconnecté</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Appel à l'action -->
+        <section id="contact">
+            <div class="contact-box">
+                <h2>Vous avez un besoin spécifique ?</h2>
+                <p>Nous développons des outils sur mesure adaptés à vos contraintes de terrain ou d'organisation.</p>
+                <a href="mailto:contact.zielh.app@gmail.com" class="email-link">contact.zielh.app@gmail.com</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
