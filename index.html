@@ -93,11 +93,12 @@
             margin-bottom: 2rem;
         }
 
+        /* Logo agrandi x3 (passé de 96px à 288px) */
         .hero-logo {
-            width: 96px;
-            height: 96px;
+            width: 288px;
+            height: 288px;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 28px;
             margin-bottom: 1.5rem;
             box-shadow: var(--shadow);
             border: 1px solid var(--border-color);
@@ -370,10 +371,10 @@
 
     <div class="container">
 
-        <!-- Navigation Navbar -->
+        <!-- Navigation Navbar (Utilise le favicon en haut à gauche) -->
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
-                <img src="assets/image/logo.jpg" alt="Zielh Logo">
+                <img src="assets/image/favicon.jpg" alt="Zielh Favicon">
                 <span>Zielh Apps</span>
             </a>
             <div class="nav-links">
@@ -385,13 +386,13 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
+        <!-- Hero Section (Logo central agrandi 3x) -->
         <header class="hero">
             <img src="assets/image/logo.jpg" alt="Zielh Apps Logo" class="hero-logo">
             <br>
-            <span class="badge">Studio de Développement Android Native</span>
-            <h1>Des Applications Mobile Utiles, Rapides & Respectueuses</h1>
-            <p class="subtitle">Nous concevons et éditons des applications Android haute performance, axées sur l'autonomie hors-ligne (Offline-First) et la protection absolue des données personnelles.</p>
+            <span class="badge">Studio de Développement Android Natif</span>
+            <h1>Des Applications Mobile Utiles, Rapides & Collaboratives</h1>
+            <p class="subtitle">Nous concevons des applications Android haute performance basées sur une philosophie <strong>Offline-First</strong>. Vos applications restent 100% fonctionnelles hors-ligne, avec la possibilité d'intégrer des fonctionnalités en ligne sécurisées via Firebase pour le partage de données multi-utilisateurs.</p>
             <div class="hero-actions">
                 <a href="portfolio.html" class="cta-button">Découvrir nos créations</a>
                 <a href="contact.html" class="secondary-button">Demander un devis</a>
@@ -405,16 +406,16 @@
             </div>
             <div class="grid">
                 <div class="feature-card">
-                    <h3>📱 Android Natif & Fast Performance</h3>
-                    <p>Développement en Kotlin avec une architecture moderne, garantissant réactivité immédiate et consommation minimale de batterie.</p>
+                    <h3>📱 Android Natif & Performances</h3>
+                    <p>Développement moderne en Kotlin garantissant une réactivité immédiate et un contrôle total sur l'appareil.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🔒 Architecture Offline-First</h3>
-                    <p>Vos outils doivent fonctionner partout. Nos applications fonctionnent de manière 100% autonome, sans dépendance serveur inutile.</p>
+                    <h3>🔒 Philosophie Offline-First</h3>
+                    <p>Vos applications fonctionnent de manière 100% autonome et locale. L'accès réseau n'est requis que lorsque vous choisissez d'interconnecter vos données.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🛡️ Respect de la Vie Privée</h3>
-                    <p>Aucune collecte abusive ni suivi publicitaire. Vos données restent sur votre appareil, sous votre contrôle exclusif.</p>
+                    <h3>☁️ Cloud & Synchronisation Sécurisée</h3>
+                    <p>Intégration sur mesure avec Firebase (Authentication, Firestore, Security Rules) pour partager des données en groupe (ex. matériel agricole, données d'équipe) en toute sécurité.</p>
                 </div>
             </div>
         </section>
@@ -436,7 +437,7 @@
                                 <h3>BrainUp : Réveil & Quizz</h3>
                             </div>
                         </div>
-                        <p>Un réveil intelligent et configurable combiné à des quiz stimulants pour réveiller votre esprit dès le matin. Fonctionne entièrement hors-ligne.</p>
+                        <p>Un réveil intelligent et configurable combiné à des quiz stimulants pour réveiller votre esprit dès le matin. Fonctionne entièrement hors-ligne sans collecte de données.</p>
                     </div>
                     <div class="card-actions">
                         <a href="portfolio.html" class="btn-secondary">Détails</a>
@@ -450,11 +451,11 @@
                         <div class="card-header-app">
                             <img src="assets/image/agricoop.jpg" alt="AgriCoop Icon" class="app-icon">
                             <div>
-                                <span class="app-tag">Solution Métier</span>
+                                <span class="app-tag">Solution Métier & Cloud</span>
                                 <h3>AgriCoop</h3>
                             </div>
                         </div>
-                        <p>Application spécialisée dédiée aux coopératives et acteurs du monde agricole pour faciliter le suivi métier et la gestion de proximité.</p>
+                        <p>Application collaborative permettant à plusieurs agriculteurs et membres d'une coopérative de partager des informations en temps réel sur leurs équipements et leur gestion de matériel via Firebase.</p>
                     </div>
                     <div class="card-actions">
                         <a href="portfolio.html" class="btn-secondary">Détails</a>
@@ -468,7 +469,7 @@
         <section id="contact">
             <div class="contact-box">
                 <h2>Un projet d'application mobile ?</h2>
-                <p>Que ce soit pour le développement complet d'une application sur mesure ou la concrétisation d'un prototype, échangeons sur votre besoin.</p>
+                <p>Que ce soit pour une application 100% hors-ligne ou un outil collaboratif sécurisé avec authentification et base de données cloud, échangeons sur votre projet.</p>
                 <a href="contact.html" class="email-link">Prendre contact</a>
             </div>
         </section>
