@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales - Zielh Apps</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Header */
+        nav.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Content Styling */
+        header.page-header {
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+            letter-spacing: -0.025em;
+        }
+
+        .last-updated {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .content-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p, ul {
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a.link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a.link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Barre de Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
+                <span>Zielh</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="about.html">À propos</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <!-- En-tête -->
+        <header class="page-header">
+            <h1>Mentions Légales</h1>
+            <p class="last-updated">Dernière mise à jour : Septembre 2026</p>
+        </header>
+
+        <!-- Contenu -->
+        <main class="content-card">
+
+            <h2>1. Éditeur du Site</h2>
+            <p>Le présent site est édité à titre individuel et non lucratif sous le nom d'usage <strong>Zielh Apps</strong>.</p>
+            <ul>
+                <li><strong>Statut :</strong> Éditeur particulier (développement d'applications à titre gratuit).</li>
+                <li><strong>Responsable de la publication :</strong> L'équipe Zielh Apps.</li>
+                <li><strong>Contact :</strong> <a href="mailto:contact.zielh.app@gmail.com" class="link">contact.zielh.app@gmail.com</a></li>
+                <li><strong>Localisation :</strong> Landes (40), Nouvelle-Aquitaine, France.</li>
+            </ul>
+
+            <h2>2. Hébergeur du Site</h2>
+            <p>Le site est hébergé et diffusé via la plateforme d'hébergement d'infrastructures de code GitHub Pages :</p>
+            <ul>
+                <li><strong>Hébergeur :</strong> GitHub, Inc.</li>
+                <li><strong>Adresse :</strong> 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis</li>
+                <li><strong>Site web :</strong> <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer" class="link">https://pages.github.com</a></li>
+            </ul>
+
+            <h2>3. Propriété Intellectuelle</h2>
+            <p>L'ensemble des contenus présents sur ce site (textes, visuels, logos, interfaces, graphismes et projets d'applications présens sous la marque Zielh Apps) sont protégés au titre du droit d'auteur et de la propriété intellectuelle.</p>
+            <p>Toute reproduction, représentation, modification ou adaptation de tout ou partie du site sans l'accord écrit préalable de l'éditeur est strictement interdite.</p>
+
+            <h2>4. Nature des Projets & Activités</h2>
+            <p>Les applications présentées sur ce site (ex. <em>BrainUp</em>, <em>Tree Of Life</em>, <em>Coq'Pit</em>, <em>AgriCoop</em>) sont développées dans le cadre de projets indépendants, à titre personnel, d'expérimentation technique ou d'entraide. Aucune transaction financière directe ni vente de produit bancaire ou réglementé n'est réalisée directement sur ce site.</p>
+
+            <h2>5. Limite de Responsabilité</h2>
+            <p>L'éditeur s'efforce de fournir des informations aussi précises que possible sur ce site vitrine. Toutefois, il ne pourra être tenu responsable des omissions, des inexactitudes ou des lacunes dans la mise à jour des informations publiées.</p>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html" class="link">Mentions Légales</a> | <a href="privacy.html" class="link">Confidentialité</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>
