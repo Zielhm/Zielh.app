@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Zielh Apps</title>
 
-        <!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -98,7 +98,7 @@
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo with 'assets/image/favicon.jpg' -->
+                <!-- Logo -->
                 <a href="index.html" class="flex items-center space-x-3 group">
                     <img src="assets/image/favicon.jpg" alt="Zielh Logo" class="w-9 h-9 rounded-lg object-cover border border-slate-200 group-hover:scale-105 transition-transform duration-200" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2563eb/ffffff?text=Z';">
                     <span class="text-xl font-bold tracking-tight text-slate-900">Zielh</span>
@@ -149,7 +149,7 @@
     <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            <!-- Column 1: Feature Cards / Info Block -->
+            <!-- Column 1: Info Block -->
             <div class="lg:col-span-5 space-y-6">
                 <!-- Card 1: Email -->
                 <div class="clean-card p-6 sm:p-8">
@@ -184,7 +184,7 @@
                 </div>
             </div>
 
-            <!-- Column 2: Minimalist Contact Form -->
+            <!-- Column 2: Form -->
             <div class="lg:col-span-7">
                 <div class="clean-card p-6 sm:p-8">
                     <h2 class="text-xl font-bold text-slate-900 mb-6">Envoyer un message</h2>
@@ -215,10 +215,10 @@
                             </label>
                             <select id="project-type" name="project-type"
                                 class="clean-input w-full px-4 py-3 rounded-xl text-sm text-slate-800">
-                                <option value="application-sur-mesure">Application sur mesure</option>
-                                <option value="script-automatisation">Script &amp; Automatisation</option>
-                                <option value="prototypage">Prototypage</option>
-                                <option value="autre">Autre</option>
+                                <option value="Application sur mesure">Application sur mesure</option>
+                                <option value="Script & Automatisation">Script &amp; Automatisation</option>
+                                <option value="Prototypage">Prototypage</option>
+                                <option value="Autre demande">Autre</option>
                             </select>
                         </div>
 
@@ -234,17 +234,17 @@
                         <!-- Submit Button -->
                         <button type="submit" class="btn-accent w-full py-3.5 px-6 rounded-xl font-semibold text-sm flex items-center justify-center space-x-2">
                             <span>Envoyer le message</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
                         </button>
                     </form>
 
-                    <!-- Success Message Alert -->
+                    <!-- Confirmation Message Alert -->
                     <div id="confirmation-message" class="hidden mt-6 p-4 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-all duration-300">
                         <div class="flex items-start space-x-3">
                             <i class="fa-solid fa-circle-check text-blue-600 text-lg mt-0.5"></i>
                             <div>
-                                <h4 class="font-semibold text-sm">Message transmis avec succès</h4>
-                                <p class="text-xs text-slate-600 mt-1">Merci de nous avoir contactés. Nous reviendrons vers vous sous 24 à 48h.</p>
+                                <h4 class="font-semibold text-sm">Client de messagerie ouvert</h4>
+                                <p class="text-xs text-slate-600 mt-1">Si votre messagerie ne s'est pas ouverte automatiquement, envoyez directement un e-mail à <a href="mailto:contact.zielh.app@gmail.com" class="font-semibold text-blue-600 underline">contact.zielh.app@gmail.com</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -278,18 +278,30 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Form Submission Handler
+        // Form Submission Handler (Mailto Dynamic)
         function handleFormSubmit(event) {
             event.preventDefault();
 
-            const form = document.getElementById('contact-form');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const projectType = document.getElementById('project-type').value;
+            const message = document.getElementById('message').value;
+
+            // Construction du sujet et du corps de l'email
+            const subject = encodeURIComponent(`[Contact Zielh Apps] ${projectType} - ${name}`);
+            const body = encodeURIComponent(
+                `Nom : ${name}\n` +
+                `E-mail de contact : ${email}\n` +
+                `Type de projet : ${projectType}\n\n` +
+                `Message :\n${message}`
+            );
+
+            // Déclenchement du mailto
+            window.location.href = `mailto:contact.zielh.app@gmail.com?subject=${subject}&body=${body}`;
+
+            // Affichage de la confirmation visuelle sur la page
             const confirmation = document.getElementById('confirmation-message');
-
-            // Reset Form & Show Clean Confirmation Message
-            form.reset();
             confirmation.classList.remove('hidden');
-
-            // Smooth scroll to confirmation message if needed on smaller screens
             confirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     </script>
