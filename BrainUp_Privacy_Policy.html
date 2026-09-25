@@ -1,80 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy – BrainUp</title>
+    <title>Politique de Confidentialité – BrainUp | Zielh Apps</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --text-color: #333333;
-            --bg-color: #f8f9fa;
+            --bg-color: #f8fafc;
             --card-bg: #ffffff;
-            --code-bg: #eef2f5;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --code-bg: #f1f5f9;
+            --code-color: #0284c7;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
             background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
             margin: 0;
-            padding: 40px 20px;
+            padding: 2rem 1rem;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 960px;
             margin: 0 auto;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Navigation Header */
+        nav.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Content Card */
+        .content-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 0.75rem;
         }
 
         h1 {
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 24px;
-            font-size: 2em;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 12px;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0;
+            color: var(--text-primary);
+            letter-spacing: -0.025em;
         }
 
         h2 {
-            color: var(--primary-color);
-            font-size: 1.3em;
-            margin-top: 28px;
-            margin-bottom: 12px;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
         }
 
         p {
-            margin-bottom: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
         }
 
         ul {
-            padding-left: 20px;
-            margin-bottom: 16px;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
         }
 
         li {
-            margin-bottom: 12px;
+            margin-bottom: 0.75rem;
         }
 
         code {
             background-color: var(--code-bg);
-            padding: 2px 6px;
-            border-radius: 4px;
+            color: var(--code-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
             font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.9em;
-            color: #d63384;
+            font-size: 0.875em;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
         }
 
-        a {
-            color: #0d6efd;
+        a.contact-link {
+            color: var(--accent-color);
             text-decoration: none;
+            font-weight: 600;
         }
 
-        a:hover {
+        a.contact-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
             text-decoration: underline;
         }
     </style>
@@ -82,21 +186,52 @@
 <body>
 
     <div class="container">
-        <h1>Privacy Policy – BrainUp</h1>
 
-        <h2>1. Data Collection and Use</h2>
-        <p>The BrainUp application is designed to operate completely offline. We do not collect, store, track, or share any personal data, device identifiers, or usage information. All of your alarms, settings, and game/puzzle data remain stored exclusively on your device.</p>
+        <!-- Navigation Navbar -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/image/logo.jpg" alt="Zielh Logo">
+                <span>Zielh Apps</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="about.html">À propos</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
 
-        <h2>2. Permissions Requested</h2>
-        <p>BrainUp requests only the system permissions strictly necessary for the alarm clock functionality:</p>
-        <ul>
-            <li><code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code>: To trigger the alarm sound at the exact time selected.</li>
-            <li><code>RECEIVE_BOOT_COMPLETED</code>: To reschedule your alarms if the device restarts.</li>
-            <li><code>USE_FULL_SCREEN_INTENT</code>: To display the alarm dismissal screen and puzzle over the lock screen.</li>
-        </ul>
+        <!-- Main Content -->
+        <main class="content-card">
+            <header class="page-header">
+                <span class="badge">Application Mobile</span>
+                <h1>Politique de Confidentialité – BrainUp</h1>
+            </header>
 
-        <h2>3. Contact</h2>
-        <p>For any questions regarding this policy, please contact: <a href="mailto:contact.zielh.app@gmail.com">contact.zielh.app@gmail.com</a></p>
+            <section>
+                <h2>1. Data Collection and Use / Collecte et utilisation des données</h2>
+                <p>The BrainUp application is designed to operate completely offline. We do not collect, store, track, or share any personal data, device identifiers, or usage information. All of your alarms, settings, and game/puzzle data remain stored exclusively on your device.</p>
+                <p><em>(L'application BrainUp est conçue pour fonctionner entièrement hors-ligne. Nous ne collectons, ne stockons, ne suivons et ne partageons aucune donnée personnelle, identifiant d'appareil ou information d'utilisation. Toutes vos alarmes, réglages et données de jeux/puzzles restent stockés exclusivement sur votre appareil.)</em></p>
+
+                <h2>2. Permissions Requested / Autorisations requises</h2>
+                <p>BrainUp requests only the system permissions strictly necessary for the alarm clock functionality:</p>
+                <ul>
+                    <li><code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code> : To trigger the alarm sound at the exact time selected / <em>Pour déclencher l'alarme à l'heure exacte sélectionnée.</em></li>
+                    <li><code>RECEIVE_BOOT_COMPLETED</code> : To reschedule your alarms if the device restarts / <em>Pour reprogrammer vos alarmes si l'appareil redémarre.</em></li>
+                    <li><code>USE_FULL_SCREEN_INTENT</code> : To display the alarm dismissal screen and puzzle over the lock screen / <em>Pour afficher l'écran de désactivation et le puzzle par-dessus l'écran de verrouillage.</em></li>
+                </ul>
+
+                <h2>3. Contact</h2>
+                <p>For any questions regarding this policy, please contact: <a href="mailto:contact.zielh.app@gmail.com" class="contact-link">contact.zielh.app@gmail.com</a></p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Politiques de Confidentialité</a></p>
+        </footer>
+
     </div>
 
 </body>
