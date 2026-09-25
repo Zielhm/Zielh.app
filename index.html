@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zielh Apps - Développement d'Applications Sur Mesure</title>
     
-    <!-- Intégration du Favicon basé sur votre arborescence -->
+    <!-- Intégration du Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
 
     <style>
@@ -40,11 +40,67 @@
             margin: 0 auto;
         }
 
+        /* Navigation Header */
+        nav.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
         /* Hero Section */
         header.hero {
             text-align: center;
-            padding: 2rem 1rem 3rem 1rem;
+            padding: 1rem 1rem 3rem 1rem;
             margin-bottom: 2rem;
+        }
+
+        .hero-logo {
+            width: 96px;
+            height: 96px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
         }
 
         .badge {
@@ -236,17 +292,40 @@
             border-top: 1px solid var(--border-color);
             padding-top: 2rem;
         }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
+
+        <!-- Barre de Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/image/logo.jpg" alt="Zielh Logo">
+                <span>Zielh</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Accueil</a>
+                <a href="about.html">À propos</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
         <!-- En-tête Vitrine -->
         <header class="hero">
+            <img src="assets/image/logo.jpg" alt="Zielh Logo Principal" class="hero-logo">
+            <br>
             <span class="badge">Développement Mobile & Solutions Sur Mesure</span>
             <h1>Création d'Applications Performantes & Intuitives</h1>
             <p class="subtitle">Nous concevons des applications mobiles modernes, fluides et orientées utilisateur, du prototype à la publication sur les stores.</p>
-            <a href="#contact" class="cta-button">Discuter d'un projet</a>
+            <a href="contact.html" class="cta-button">Discuter d'un projet</a>
         </header>
 
         <!-- Nos Domaines d'Expertise -->
@@ -279,7 +358,7 @@
                         <h3>AgriCoop</h3>
                         <p>Politique de confidentialité et traitement des données pour l'application AgriCoop.</p>
                     </div>
-                    <a href="AgriCoop.html">Consulter la politique</a>
+                    <a href="privacy.html">Consulter la politique</a>
                 </article>
 
                 <!-- Application BrainUp -->
@@ -288,7 +367,7 @@
                         <h3>BrainUp : Réveil & Quizz</h3>
                         <p>Politique de confidentialité concernant le fonctionnement hors-ligne et le respect de la vie privée.</p>
                     </div>
-                    <a href="BrainUp_Privacy_Policy.html">Consulter la politique</a>
+                    <a href="privacy.html">Consulter la politique</a>
                 </article>
             </div>
         </section>
@@ -298,12 +377,12 @@
             <div class="contact-box">
                 <h2>Un projet d'application ?</h2>
                 <p>Vous souhaitez développer une application mobile sur mesure ou avez des questions concernant nos projets ? Contactez-nous dès maintenant.</p>
-                <a href="mailto:contact.zielh.app@gmail.com" class="email-link">contact.zielh.app@gmail.com</a>
+                <a href="contact.html" class="email-link">Formulaire de contact</a>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Zielh Apps. Tous droits réservés.</p>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Confidentialité</a></p>
         </footer>
     </div>
 
