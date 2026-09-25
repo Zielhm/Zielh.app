@@ -64,6 +64,7 @@
             width: 32px;
             height: 32px;
             border-radius: 6px;
+            object-fit: cover;
         }
 
         .nav-links {
@@ -229,6 +230,11 @@
             border-top: 1px solid var(--border-color);
             padding-top: 2rem;
         }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -238,13 +244,15 @@
         <!-- Barre de Navigation -->
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
-                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
+                <img src="assets/image/logo.jpg" alt="Zielh Logo">
                 <span>Zielh</span>
             </a>
             <div class="nav-links">
                 <a href="index.html">Accueil</a>
                 <a href="about.html" class="active">À propos</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
             </div>
         </nav>
 
@@ -252,7 +260,7 @@
         <header class="hero">
             <span class="badge">Notre Histoire & Philosophie</span>
             <h1>Qui sommes-nous ?</h1>
-            <p class="subtitle">Une équipe à taille humaine dédiée à la création d'applications utiles et respectueuses des utilisateurs.</p>
+            <p class="subtitle">Une démarche indépendante dédiée à la création d'applications utiles, autonomes et respectueuses des utilisateurs.</p>
         </header>
 
         <!-- Notre Mission & Démarche -->
@@ -279,8 +287,8 @@
             <h2 class="section-title">Périmètre d'Intervention</h2>
             
             <div class="scope-card">
-                <h3>Focus sur les applications métier et utilitaires du quotidien</h3>
-                <p>Notre savoir-faire se concentre sur les applications utilitaires, le fonctionnement hors-ligne (offline-first), la gestion de données locales et l'ergonomie utilisateur fluide.</p>
+                <h3>Focus sur les applications métier, scripts et prototypage</h3>
+                <p>Notre savoir-faire se concentre sur les applications utilitaires, le développement de scripts métier, le prototypage rapide, le fonctionnement hors-ligne (offline-first) et l'ergonomie utilisateur fluide.</p>
             </div>
 
             <div class="scope-card" style="border-left-color: #64748b;">
@@ -293,13 +301,13 @@
         <section id="contact">
             <div class="contact-box">
                 <h2>Un projet à nous soumettre ?</h2>
-                <p>Que vous ayez besoin d'une application sur mesure pour votre structure ou d'un outil épuré pour simplifier votre quotidien, nous sommes à votre écoute.</p>
-                <a href="mailto:contact.zielh.app@gmail.com" class="email-link">contact.zielh.app@gmail.com</a>
+                <p>Que vous ayez besoin d'une application sur mesure pour votre structure, d'un prototype ou d'un outil épuré pour simplifier votre quotidien, nous sommes à votre écoute.</p>
+                <a href="contact.html" class="email-link">Formulaire de contact</a>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Zielh Apps. Tous droits réservés.</p>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Confidentialité</a></p>
         </footer>
     </div>
 
