@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestations & Services - Zielh Apps</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Header */
+        nav.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        header.hero {
+            text-align: center;
+            padding: 1rem 1rem 3rem 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 1rem 0;
+            color: var(--text-primary);
+            letter-spacing: -0.025em;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.75rem;
+            margin-bottom: 3.5rem;
+        }
+
+        @media (max-width: 500px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .service-card h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-list li {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Call to Action Box */
+        .contact-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            margin-top: 0;
+            font-size: 1.75rem;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            max-width: 500px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: white;
+            background-color: var(--accent-color);
+            text-decoration: none;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--radius);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Barre de Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
+                <span>Zielh</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="about.html">À propos</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <!-- En-tête -->
+        <header class="hero">
+            <span class="badge">Savoir-faire & Solutions</span>
+            <h1>Nos Prestations & Services</h1>
+            <p class="subtitle">Des solutions technologiques adaptées aux besoins du terrain, axées sur la performance, la simplicité et l'autonomie.</p>
+        </header>
+
+        <!-- Grille des Prestations -->
+        <div class="services-grid">
+
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h2>Applications Android Sur Mesure</h2>
+                <p>Développement complet d'applications Android natives du cahier des charges initial jusqu'à la publication.</p>
+                <ul class="service-list">
+                    <li>Analyse des besoins métiers & rédaction des spécifications</li>
+                    <li>Développement Kotlin natif performant</li>
+                    <li>Outils adaptés aux professionnels, coopératives & particuliers</li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h2>Alternatives Saines & Hors Réseau</h2>
+                <p>Création d'outils de remplacement épurés pour pallier les applications devenues lentes, dépendantes d'Internet ou saturées de publicité.</p>
+                <ul class="service-list">
+                    <li>Architecture <em>Offline-First</em> (fonctionnement 100% hors-ligne)</li>
+                    <li>Zéro publicité, zéro traceur intrusif</li>
+                    <li>Chiffrement et stockage strictement local de vos données</li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h2>Conception Web & Sites Vitrines</h2>
+                <p>Réalisation de sites internet modernes, légers et optimisés pour valoriser votre activité ou vos services.</p>
+                <ul class="service-list">
+                    <li>Design 100% responsive (adapté mobiles, tablettes et PC)</li>
+                    <li>Temps de chargement ultra-rapides et code optimisé</li>
+                    <li>Conformité RGPD et respect de la vie privée dès la conception</li>
+                </ul>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h2>Refonte & Optimisation UX/UI</h2>
+                <p>Amélioration de l'ergonomie et de l'interface d'outils existants pour offrir une expérience utilisateur fluide et efficace.</p>
+                <ul class="service-list">
+                    <li>Simplification du parcours et suppression du superflu</li>
+                    <li>Optimisation des performances techniques et du code</li>
+                    <li>Adaptation pour un usage de terrain rapide</li>
+                </ul>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card" style="grid-column: 1 / -1;">
+                <div class="service-icon">🚀</div>
+                <h2>Publication, Maintenance & Suivi</h2>
+                <p>Accompagnement continu pour garantir la pérennité et la conformité de vos projets numériques.</p>
+                <ul class="service-list">
+                    <li>Prise en charge du processus de validation et publication sur les stores (Google Play)</li>
+                    <li>Corrections, mises à jour de sécurité et audits de code assistés par IA</li>
+                    <li>Hébergement et déploiement de sites vitrines légers</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Appel à l'action -->
+        <section id="contact">
+            <div class="contact-box">
+                <h2>Besoin d'une étude ou d'un devis pour votre projet ?</h2>
+                <p>Exposez-nous votre besoin pour obtenir une proposition adaptée à vos objectifs et à votre budget.</p>
+                <a href="contact.html" class="cta-btn">Demander un devis gratuitement</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html" style="color: var(--text-secondary);">Mentions Légales</a> | <a href="privacy.html" style="color: var(--text-secondary);">Confidentialité</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>
