@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zielh Apps - Développement d'Applications Sur Mesure</title>
+    
+    <!-- Intégration du Favicon basé sur votre arborescence -->
+    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -137,11 +141,21 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            overflow: hidden;
         }
 
         .card:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
+        }
+
+        .app-icon {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
         }
 
         .card h3 {
@@ -261,6 +275,7 @@
                 <!-- Application AgriCoop -->
                 <article class="card">
                     <div>
+                        <img src="assets/image/agricoop.jpg" alt="AgriCoop Icon" class="app-icon">
                         <h3>AgriCoop</h3>
                         <p>Politique de confidentialité et traitement des données pour l'application AgriCoop.</p>
                     </div>
