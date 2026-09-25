@@ -3,137 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Mon Portfolio</title>
+    <title>Contact - Zielh Portfolio</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/image/favicon.ico">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    <!-- CSS (Vérifie bien que le fichier existe à cet emplacement exact) -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Font Awesome -->
+    <!-- Font Awesome icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-glow {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Success notification modal styling */
+        #status-modal {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-blue-500 selection:text-white">
 
     <!-- Header / Navbar -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo-link">
-                <img src="assets/image/favicon.ico" alt="Favicon Portfolio" class="nav-favicon">
-            </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
+    <header class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform duration-300">
+                        Z
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
+                        Zielh<span class="text-blue-500">.app</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-1">
+                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Accueil</a>
+                    <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">À propos</a>
+                    <a href="services.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Services</a>
+                    <a href="portfolio.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-medium text-white bg-blue-600/20 border border-blue-500/30 text-blue-400">Contact</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 px-4 pt-2 pb-4 space-y-1">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Services</a>
+            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Portfolio</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-400 bg-blue-900/30">Contact</a>
         </div>
     </header>
 
-    <!-- Banner Contact -->
-    <section class="page-banner">
-        <div class="container">
-            <h1>Contactez-moi</h1>
-            <p>Un projet, une question ou une idée d'application web à concrétiser ? Discutons-en !</p>
+    <!-- Page Hero Banner -->
+    <section class="relative py-16 md:py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-900 to-slate-900 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded-full mb-4">
+                Parlons de votre projet
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4">
+                Contactez-<span class="gradient-text">moi</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-400">
+                Un projet, une question ou une idée d'application web à concrétiser ? Remplissez le formulaire ci-dessous ou contactez-moi directement.
+            </p>
         </div>
     </section>
 
-    <!-- Section Contact Main -->
-    <section class="contact-section">
-        <div class="container contact-grid">
+    <!-- Main Content Section -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            <!-- Informations de contact -->
-            <div class="contact-info">
-                <h2>Mes Coordonnées</h2>
-                <p>N'hésitez pas à me contacter directement par e-mail ou via le formulaire ci-contre.</p>
-                
-                <div class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <h3>E-mail</h3>
-                        <p><a href="mailto:contact@exemple.com">contact@exemple.com</a></p>
-                    </div>
-                </div>
+            <!-- Column 1: Contact Information -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="glass-card rounded-2xl p-8 shadow-xl">
+                    <h2 class="text-2xl font-bold text-white mb-2">Mes Coordonnées</h2>
+                    <p class="text-slate-400 mb-8 text-sm leading-relaxed">
+                        N'hésitez pas à me contacter directement par e-mail ou via le formulaire ci-contre. Je vous répondrai sous 24 à 48 heures.
+                    </p>
 
-                <div class="info-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <h3>Localisation</h3>
-                        <p>France</p>
-                    </div>
-                </div>
+                    <div class="space-y-6">
+                        <!-- Info Card: Email -->
+                        <div class="flex items-start space-x-4 p-3 rounded-xl hover:bg-slate-800/40 transition-colors">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-medium uppercase tracking-wider text-slate-400">E-mail</h3>
+                                <a href="mailto:contact@exemple.com" class="text-base font-semibold text-white hover:text-blue-400 transition-colors">
+                                    contact@exemple.com
+                                </a>
+                            </div>
+                        </div>
 
-                <div class="info-item">
-                    <i class="fa-solid fa-clock"></i>
-                    <div>
-                        <h3>Disponibilité</h3>
-                        <p>Du lundi au vendredi, 9h00 - 18h00</p>
-                    </div>
-                </div>
+                        <!-- Info Card: Location -->
+                        <div class="flex items-start space-x-4 p-3 rounded-xl hover:bg-slate-800/40 transition-colors">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-medium uppercase tracking-wider text-slate-400">Localisation</h3>
+                                <p class="text-base font-semibold text-white">France</p>
+                            </div>
+                        </div>
 
-                <div class="social-links">
-                    <h3>Retrouvez-moi sur</h3>
-                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <!-- Info Card: Availability -->
+                        <div class="flex items-start space-x-4 p-3 rounded-xl hover:bg-slate-800/40 transition-colors">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-medium uppercase tracking-wider text-slate-400">Disponibilité</h3>
+                                <p class="text-base font-semibold text-white">Du lundi au vendredi, 9h00 - 18h00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="mt-8 pt-8 border-t border-slate-700/50">
+                        <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Retrouvez-moi sur</h3>
+                        <div class="flex space-x-3">
+                            <a href="#" aria-label="GitHub" class="w-11 h-11 rounded-xl bg-slate-800 hover:bg-blue-600 border border-slate-700 hover:border-blue-500 flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-github text-xl"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" class="w-11 h-11 rounded-xl bg-slate-800 hover:bg-blue-600 border border-slate-700 hover:border-blue-500 flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter / X" class="w-11 h-11 rounded-xl bg-slate-800 hover:bg-blue-600 border border-slate-700 hover:border-blue-500 flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-x-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Formulaire de contact -->
-            <div class="contact-form-container">
-                <h2>Envoyer un message</h2>
-                <form action="#" method="POST" class="contact-form">
+            <!-- Column 2: Interactive Contact Form -->
+            <div class="lg:col-span-7">
+                <div class="glass-card rounded-2xl p-8 shadow-xl">
+                    <h2 class="text-2xl font-bold text-white mb-6">Envoyer un message</h2>
                     
-                    <div class="form-group">
-                        <label for="name">Nom complet *</label>
-                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
-                    </div>
+                    <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name Input -->
+                            <div>
+                                <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                    Nom complet <span class="text-blue-500">*</span>
+                                </label>
+                                <input type="text" id="name" name="name" required placeholder="Votre nom"
+                                    class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            </div>
 
-                    <div class="form-group">
-                        <label for="email">Adresse E-mail *</label>
-                        <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
-                    </div>
+                            <!-- Email Input -->
+                            <div>
+                                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                    Adresse E-mail <span class="text-blue-500">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com"
+                                    class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            </div>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="project-type">Type de projet</label>
-                        <select id="project-type" name="project-type">
-                            <option value="">-- Sélectionnez une option --</option>
-                            <option value="web-app">Application Web / Interface Navigateur (.html)</option>
-                            <option value="scripts-automation">Scripts, Automatisation & Prototypage rapide</option>
-                            <option value="mobile-app">Application Mobile</option>
-                            <option value="consulting">Conseil & Audit</option>
-                            <option value="other">Autre demande</option>
-                        </select>
-                    </div>
+                        <!-- Project Type Select -->
+                        <div>
+                            <label for="project-type" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                Type de projet
+                            </label>
+                            <select id="project-type" name="project-type"
+                                class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <option value="" class="bg-slate-900 text-slate-400">-- Sélectionnez une option --</option>
+                                <option value="web-app" class="bg-slate-900">Application Web / Single-Page Application</option>
+                                <option value="mobile-app" class="bg-slate-900">Application Mobile</option>
+                                <option value="scripts-automation" class="bg-slate-900">Scripts & Automatisation</option>
+                                <option value="consulting" class="bg-slate-900">Conseil & Audit Web</option>
+                                <option value="other" class="bg-slate-900">Autre demande</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Décrivez votre besoin..." required></textarea>
-                    </div>
+                        <!-- Message Textarea -->
+                        <div>
+                            <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                Message <span class="text-blue-500">*</span>
+                            </label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin ou votre projet web..."
+                                class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"></textarea>
+                        </div>
 
-                    <button type="submit" class="btn-submit">
-                        <i class="fa-solid fa-paper-plane"></i> Envoyer le message
-                    </button>
-                </form>
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-glow w-full md:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl flex items-center justify-center space-x-3 transition-all cursor-pointer">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Envoyer le message</span>
+                        </button>
+
+                    </form>
+                </div>
             </div>
 
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; 2026 Tous droits réservés.</p>
-            <ul class="footer-links">
-                <li><a href="mentions-legales.html">Mentions légales</a></li>
-                <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+    <footer class="border-t border-slate-800 bg-slate-950 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-500 text-center md:text-left">
+                &copy; 2026 Zielh. Tous droits réservés.
+            </p>
+            <ul class="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+                <li><a href="mentions-legales.html" class="hover:text-blue-400 transition-colors">Mentions légales</a></li>
+                <li><a href="privacy.html" class="hover:text-blue-400 transition-colors">Politique de confidentialité</a></li>
             </ul>
         </div>
     </footer>
 
+    <!-- Success / Error Feedback Overlay -->
+    <div id="status-modal" class="fixed bottom-6 right-6 z-50 max-w-sm hidden opacity-0 transform translate-y-4">
+        <div class="bg-emerald-900/90 border border-emerald-500 text-emerald-100 p-4 rounded-xl shadow-2xl flex items-start space-x-3 backdrop-blur-md">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-xl mt-0.5"></i>
+            <div>
+                <h4 class="font-bold text-white text-sm">Message envoyé !</h4>
+                <p class="text-xs text-emerald-200 mt-1">Merci pour votre message. Je vous recontacterai rapidement.</p>
+            </div>
+            <button onclick="closeModal()" class="text-emerald-400 hover:text-white ml-auto">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        /* Mobile Menu Toggle Logic */
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        /* Form submission feedback without page reload */
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const modal = document.getElementById('status-modal');
+            modal.classList.remove('hidden');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0', 'translate-y-4');
+            }, 10);
+
+            // Reset form fields
+            document.getElementById('contact-form').reset();
+
+            // Auto-dismiss after 5 seconds
+            setTimeout(() => {
+                closeModal();
+            }, 5000);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('status-modal');
+            modal.classList.add('opacity-0', 'translate-y-4');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
 </body>
 </html>
