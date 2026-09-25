@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Zielh Portfolio</title>
+    <title>Contact - Zielh Apps</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,12 +13,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
+                            50: '#eff6ff',
+                            100: '#dbeafe',
                             500: '#3b82f6',
                             600: '#2563eb',
                             700: '#1d4ed8',
-                            900: '#0f172a',
                         }
                     }
                 }
@@ -26,238 +25,226 @@
         }
     </script>
 
-    <!-- Font Awesome icons CDN -->
+    <!-- Font Awesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom CSS Styles -->
+    <!-- CSS Theme Variables & Minimalist Custom Styles -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --border-color: #e2e8f0;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
         }
 
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .clean-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+            transition: all 0.2s ease-in-out;
         }
 
-        .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        .clean-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .clean-input {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            transition: all 0.2s ease;
         }
 
-        .btn-glow {
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+        .clean-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
         }
 
-        .btn-glow:hover {
-            box-shadow: 0 0 25px rgba(37, 99, 235, 0.6);
-            transform: translateY(-2px);
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            transition: all 0.2s ease;
         }
 
-        /* Success notification modal styling */
-        #status-modal {
-            transition: opacity 0.3s ease, transform 0.3s ease;
+        .btn-accent:hover {
+            background-color: #1d4ed8;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .active-nav-link {
+            color: var(--accent-color);
+            font-weight: 600;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-blue-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-blue-100 selection:text-blue-900">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
+                <!-- Logo with 'assets/image/favicon.jpg' -->
                 <a href="index.html" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform duration-300">
-                        Z
-                    </div>
-                    <span class="text-xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
-                        Zielh<span class="text-blue-500">.app</span>
-                    </span>
+                    <img src="assets/image/favicon.jpg" alt="Zielh Logo" class="w-9 h-9 rounded-lg object-cover border border-slate-200 group-hover:scale-105 transition-transform duration-200" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2563eb/ffffff?text=Z';">
+                    <span class="text-xl font-bold tracking-tight text-slate-900">Zielh</span>
                 </a>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-1">
-                    <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Accueil</a>
-                    <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">À propos</a>
-                    <a href="services.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Services</a>
-                    <a href="portfolio.html" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Portfolio</a>
-                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-medium text-white bg-blue-600/20 border border-blue-500/30 text-blue-400">Contact</a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Accueil</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">À propos</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="text-sm font-medium active-nav-link">Contact</a>
                 </nav>
 
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 px-4 pt-2 pb-4 space-y-1">
-            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Accueil</a>
-            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">À propos</a>
-            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Services</a>
-            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Portfolio</a>
-            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-400 bg-blue-900/30">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Services</a>
+            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Portfolio</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-600 bg-blue-50/50">Contact</a>
         </div>
     </header>
 
-    <!-- Page Hero Banner -->
-    <section class="relative py-16 md:py-20 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-900 to-slate-900 pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded-full mb-4">
-                Parlons de votre projet
+    <!-- Hero Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200/60 rounded-full mb-4">
+                Contact & Échanges
             </span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4">
-                Contactez-<span class="gradient-text">moi</span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
+                Contactez-nous
             </h1>
-            <p class="max-w-2xl mx-auto text-lg text-slate-400">
-                Un projet, une question ou une idée d'application web à concrétiser ? Remplissez le formulaire ci-dessous ou contactez-moi directement.
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed">
+                Un projet, une idée d'application ou une question sur nos démarches ? Écrivez-nous.
             </p>
         </div>
     </section>
 
     <!-- Main Content Section -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            <!-- Column 1: Contact Information -->
+            <!-- Column 1: Feature Cards / Info Block -->
             <div class="lg:col-span-5 space-y-6">
-                <div class="glass-card rounded-2xl p-8 shadow-xl">
-                    <h2 class="text-2xl font-bold text-white mb-2">Mes Coordonnées</h2>
-                    <p class="text-slate-400 mb-8 text-sm leading-relaxed">
-                        N'hésitez pas à me contacter directement par e-mail ou via le formulaire ci-contre. Je vous répondrai sous 24 à 48 heures.
+                <!-- Card 1: Email -->
+                <div class="clean-card p-6 sm:p-8">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-5">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </div>
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Adresse E-mail</h3>
+                    <a href="mailto:contact@zielh.app" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">
+                        contact@zielh.app
+                    </a>
+                </div>
+
+                <!-- Card 2: Process & Commitments -->
+                <div class="clean-card p-6 sm:p-8">
+                    <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 mb-5">
+                        <i class="fa-solid fa-handshake-simple text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Notre Démarche</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Réponses sous 24 à 48h, étude personnalisée de vos projets utilitaires, scripts ou applications sur mesure.
                     </p>
-
-                    <div class="space-y-6">
-                        <!-- Info Card: Email -->
-                        <div class="flex items-start space-x-4 p-3 rounded-xl hover:bg-slate-800/40 transition-colors">
-                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
-                                <i class="fa-solid fa-envelope text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xs font-medium uppercase tracking-wider text-slate-400">E-mail</h3>
-                                <a href="mailto:contact@exemple.com" class="text-base font-semibold text-white hover:text-blue-400 transition-colors">
-                                    contact@exemple.com
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Info Card: Location -->
-                        <div class="flex items-start space-x-4 p-3 rounded-xl hover:bg-slate-800/40 transition-colors">
-                            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
-                                <i class="fa-solid fa-location-dot text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xs font-medium uppercase tracking-wider text-slate-400">Localisation</h3>
-                                <p class="text-base font-semibold text-white">France</p>
-                            </div>
-                        </div>
-
-                        <!-- Info Card: Availability -->
-                        <div class="flex items-start space-x-4 p-3 rounded-xl hover:bg-slate-800/40 transition-colors">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                                <i class="fa-solid fa-clock text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xs font-medium uppercase tracking-wider text-slate-400">Disponibilité</h3>
-                                <p class="text-base font-semibold text-white">Du lundi au vendredi, 9h00 - 18h00</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Links -->
-                    <div class="mt-8 pt-8 border-t border-slate-700/50">
-                        <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Retrouvez-moi sur</h3>
-                        <div class="flex space-x-3">
-                            <a href="#" aria-label="GitHub" class="w-11 h-11 rounded-xl bg-slate-800 hover:bg-blue-600 border border-slate-700 hover:border-blue-500 flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300">
-                                <i class="fa-brands fa-github text-xl"></i>
-                            </a>
-                            <a href="#" aria-label="LinkedIn" class="w-11 h-11 rounded-xl bg-slate-800 hover:bg-blue-600 border border-slate-700 hover:border-blue-500 flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300">
-                                <i class="fa-brands fa-linkedin-in text-xl"></i>
-                            </a>
-                            <a href="#" aria-label="Twitter / X" class="w-11 h-11 rounded-xl bg-slate-800 hover:bg-blue-600 border border-slate-700 hover:border-blue-500 flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300">
-                                <i class="fa-brands fa-x-twitter text-xl"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <ul class="space-y-2 text-xs font-medium text-slate-500">
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-check text-blue-600"></i>
+                            <span>Analyse claire des besoins</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-check text-blue-600"></i>
+                            <span>Réponses personnalisées</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Column 2: Interactive Contact Form -->
+            <!-- Column 2: Minimalist Contact Form -->
             <div class="lg:col-span-7">
-                <div class="glass-card rounded-2xl p-8 shadow-xl">
-                    <h2 class="text-2xl font-bold text-white mb-6">Envoyer un message</h2>
+                <div class="clean-card p-6 sm:p-8">
+                    <h2 class="text-xl font-bold text-slate-900 mb-6">Envoyer un message</h2>
                     
-                    <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Name Input -->
-                            <div>
-                                <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                                    Nom complet <span class="text-blue-500">*</span>
-                                </label>
-                                <input type="text" id="name" name="name" required placeholder="Votre nom"
-                                    class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
-                            </div>
-
-                            <!-- Email Input -->
-                            <div>
-                                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                                    Adresse E-mail <span class="text-blue-500">*</span>
-                                </label>
-                                <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com"
-                                    class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
-                            </div>
+                    <form id="contact-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                        <!-- Name Input -->
+                        <div>
+                            <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+                                Nom complet <span class="text-blue-600">*</span>
+                            </label>
+                            <input type="text" id="name" name="name" required placeholder="Votre nom"
+                                class="clean-input w-full px-4 py-3 rounded-xl text-sm placeholder-slate-400">
                         </div>
 
-                        <!-- Project Type Select -->
+                        <!-- Email Input -->
                         <div>
-                            <label for="project-type" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                                Type de projet
+                            <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+                                Adresse e-mail <span class="text-blue-600">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com"
+                                class="clean-input w-full px-4 py-3 rounded-xl text-sm placeholder-slate-400">
+                        </div>
+
+                        <!-- Need Type Select -->
+                        <div>
+                            <label for="project-type" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+                                Type de besoin
                             </label>
                             <select id="project-type" name="project-type"
-                                class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
-                                <option value="" class="bg-slate-900 text-slate-400">-- Sélectionnez une option --</option>
-                                <option value="web-app" class="bg-slate-900">Application Web / Single-Page Application</option>
-                                <option value="mobile-app" class="bg-slate-900">Application Mobile</option>
-                                <option value="scripts-automation" class="bg-slate-900">Scripts & Automatisation</option>
-                                <option value="consulting" class="bg-slate-900">Conseil & Audit Web</option>
-                                <option value="other" class="bg-slate-900">Autre demande</option>
+                                class="clean-input w-full px-4 py-3 rounded-xl text-sm text-slate-800">
+                                <option value="application-sur-mesure">Application sur mesure</option>
+                                <option value="script-automatisation">Script &amp; Automatisation</option>
+                                <option value="prototypage">Prototypage</option>
+                                <option value="autre">Autre</option>
                             </select>
                         </div>
 
                         <!-- Message Textarea -->
                         <div>
-                            <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                                Message <span class="text-blue-500">*</span>
+                            <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+                                Message <span class="text-blue-600">*</span>
                             </label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin ou votre projet web..."
-                                class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet ou votre demande..."
+                                class="clean-input w-full px-4 py-3 rounded-xl text-sm placeholder-slate-400 resize-none"></textarea>
                         </div>
 
                         <!-- Submit Button -->
-                        <button type="submit" class="btn-glow w-full md:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl flex items-center justify-center space-x-3 transition-all cursor-pointer">
-                            <i class="fa-solid fa-paper-plane"></i>
+                        <button type="submit" class="btn-accent w-full py-3.5 px-6 rounded-xl font-semibold text-sm flex items-center justify-center space-x-2">
                             <span>Envoyer le message</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
-
                     </form>
+
+                    <!-- Success Message Alert -->
+                    <div id="confirmation-message" class="hidden mt-6 p-4 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 transition-all duration-300">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-blue-600 text-lg mt-0.5"></i>
+                            <div>
+                                <h4 class="font-semibold text-sm">Message transmis avec succès</h4>
+                                <p class="text-xs text-slate-600 mt-1">Merci de nous avoir contactés. Nous reviendrons vers vous sous 24 à 48h.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -265,35 +252,22 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 bg-slate-950 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer class="border-t border-slate-200 bg-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="text-sm text-slate-500 text-center md:text-left">
-                &copy; 2026 Zielh. Tous droits réservés.
+                &copy; 2026 Zielh Apps. Tous droits réservés.
             </p>
-            <ul class="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
-                <li><a href="mentions-legales.html" class="hover:text-blue-400 transition-colors">Mentions légales</a></li>
-                <li><a href="privacy.html" class="hover:text-blue-400 transition-colors">Politique de confidentialité</a></li>
-            </ul>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
+                <a href="mentions-legales.html" class="hover:text-slate-900 transition-colors">Mentions Légales</a>
+                <span class="text-slate-300">|</span>
+                <a href="privacy.html" class="hover:text-slate-900 transition-colors">Confidentialité</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Success / Error Feedback Overlay -->
-    <div id="status-modal" class="fixed bottom-6 right-6 z-50 max-w-sm hidden opacity-0 transform translate-y-4">
-        <div class="bg-emerald-900/90 border border-emerald-500 text-emerald-100 p-4 rounded-xl shadow-2xl flex items-start space-x-3 backdrop-blur-md">
-            <i class="fa-solid fa-circle-check text-emerald-400 text-xl mt-0.5"></i>
-            <div>
-                <h4 class="font-bold text-white text-sm">Message envoyé !</h4>
-                <p class="text-xs text-emerald-200 mt-1">Merci pour votre message. Je vous recontacterai rapidement.</p>
-            </div>
-            <button onclick="closeModal()" class="text-emerald-400 hover:text-white ml-auto">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- Interactive Scripts -->
+    <!-- JavaScript Logic -->
     <script>
-        /* Mobile Menu Toggle Logic */
+        // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -301,32 +275,19 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        /* Form submission feedback without page reload */
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            
-            const modal = document.getElementById('status-modal');
-            modal.classList.remove('hidden');
-            
-            setTimeout(() => {
-                modal.classList.remove('opacity-0', 'translate-y-4');
-            }, 10);
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
 
-            // Reset form fields
-            document.getElementById('contact-form').reset();
+            const form = document.getElementById('contact-form');
+            const confirmation = document.getElementById('confirmation-message');
 
-            // Auto-dismiss after 5 seconds
-            setTimeout(() => {
-                closeModal();
-            }, 5000);
-        }
+            // Reset Form & Show Clean Confirmation Message
+            form.reset();
+            confirmation.classList.remove('hidden');
 
-        function closeModal() {
-            const modal = document.getElementById('status-modal');
-            modal.classList.add('opacity-0', 'translate-y-4');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
+            // Smooth scroll to confirmation message if needed on smaller screens
+            confirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     </script>
 </body>
