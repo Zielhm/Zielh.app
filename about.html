@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos - Zielh Apps</title>
     
-    <!-- Favicon -->
+    <!-- Intégration du Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
@@ -32,112 +55,18 @@
             color: var(--text-primary);
             line-height: 1.6;
             margin: 0;
-            padding: 2rem 1rem;
+            padding-bottom: 2rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
-        /* Navigation Header */
-        nav.navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 800;
-            font-size: 1.25rem;
-            z-index: 1001;
-        }
-
-        .nav-logo img {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            object-fit: cover;
-            border: 1px solid var(--border-color);
-        }
-
-        /* Bouton Menu Smartphone (Hamburger) */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
-            color: var(--text-primary);
-        }
-
-        .menu-toggle svg {
-            width: 28px;
-            height: 28px;
-            display: block;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent-color);
-        }
-
-        /* Responsive Navbar pour Smartphone */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: var(--card-bg);
-                border: 1px solid var(--border-color);
-                border-radius: var(--radius);
-                padding: 1.25rem;
-                box-shadow: var(--shadow-hover);
-                gap: 1rem;
-                z-index: 1000;
-                text-align: center;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                padding: 0.5rem 0;
-                width: 100%;
-                font-size: 1.05rem;
-            }
+        .active-nav-link {
+            color: var(--accent-color) !important;
+            font-weight: 600;
         }
 
         /* Hero Section */
