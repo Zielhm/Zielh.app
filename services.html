@@ -8,6 +8,29 @@
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
 
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -32,118 +55,25 @@
             color: var(--text-primary);
             line-height: 1.6;
             margin: 0;
-            padding: 2rem 1rem;
+            padding-bottom: 2rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
-        /* Navigation Header */
-        nav.navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 800;
-            font-size: 1.25rem;
-            z-index: 1001;
-        }
-
-        .nav-logo img {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            object-fit: cover;
-            border: 1px solid var(--border-color);
-        }
-
-        /* Bouton Menu Smartphone (Hamburger) */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
-            color: var(--text-primary);
-        }
-
-        .menu-toggle svg {
-            width: 28px;
-            height: 28px;
-            display: block;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent-color);
-        }
-
-        /* Responsive Navbar pour Smartphone */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: var(--card-bg);
-                border: 1px solid var(--border-color);
-                border-radius: var(--radius);
-                padding: 1.25rem;
-                box-shadow: var(--shadow-hover);
-                gap: 1rem;
-                z-index: 1000;
-                text-align: center;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                padding: 0.5rem 0;
-                width: 100%;
-                font-size: 1.05rem;
-            }
+        .active-nav-link {
+            color: var(--accent-color) !important;
+            font-weight: 600;
         }
 
         /* Hero Section */
         header.hero {
             text-align: center;
             padding: 1rem 1rem 3rem 1rem;
+            margin-bottom: 1rem;
         }
 
         .badge {
@@ -163,6 +93,7 @@
             margin: 0 0 1rem 0;
             color: var(--text-primary);
             letter-spacing: -0.025em;
+            line-height: 1.2;
         }
 
         p.subtitle {
@@ -175,7 +106,7 @@
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 1.75rem;
             margin-bottom: 3.5rem;
         }
@@ -245,12 +176,12 @@
             line-height: 1;
         }
 
-        /* Call to Action Box */
+        /* Contact Section */
         .contact-box {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
             border-radius: var(--radius);
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
@@ -261,23 +192,23 @@
 
         .contact-box p {
             color: #94a3b8;
-            max-width: 500px;
-            margin: 0 auto 1.5rem auto;
+            max-width: 520px;
+            margin: 0 auto 1.75rem auto;
         }
 
-        .cta-btn {
+        .email-link {
             display: inline-block;
             font-size: 1.05rem;
             font-weight: 600;
-            color: white;
-            background-color: var(--accent-color);
+            color: #ffffff;
             text-decoration: none;
-            padding: 0.85rem 1.75rem;
+            padding: 0.8rem 1.75rem;
             border-radius: var(--radius);
+            background-color: var(--accent-color);
             transition: background-color 0.2s ease, transform 0.1s ease;
         }
 
-        .cta-btn:hover {
+        .email-link:hover {
             background-color: var(--accent-hover);
             transform: translateY(-1px);
         }
@@ -293,7 +224,7 @@
 
         footer a {
             color: var(--text-secondary);
-            text-decoration: none;
+            text-decoration: underline;
         }
 
         footer a:hover {
@@ -301,35 +232,47 @@
         }
     </style>
 </head>
-<body>
+<body class="selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Header / Navbar Responsive -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 mb-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group text-slate-900 no-underline">
+                    <img src="assets/image/favicon.jpg" alt="Zielh Logo" class="w-9 h-9 rounded-lg object-cover border border-slate-200 group-hover:scale-105 transition-transform duration-200" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2563eb/ffffff?text=Z';">
+                    <span class="text-xl font-bold tracking-tight">Zielh</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Accueil</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">À propos</a>
+                    <a href="services.html" class="text-sm font-medium active-nav-link transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Portfolio</a>
+                    <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-600 bg-blue-50/50 no-underline">Services</a>
+            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Portfolio</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Contact</a>
+        </div>
+    </header>
 
     <div class="container">
 
-        <!-- Barre de Navigation avec bouton Hamburger -->
-        <nav class="navbar">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
-                <span>Zielh Apps</span>
-            </a>
-
-            <!-- Bouton Menu Mobile -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-
-            <!-- Liens de Navigation -->
-            <div class="nav-links" id="navLinks">
-                <a href="index.html">Accueil</a>
-                <a href="about.html">À propos</a>
-                <a href="services.html" class="active">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
-
-        <!-- En-tête -->
+        <!-- En-tête Hero -->
         <header class="hero">
             <span class="badge">Savoir-faire & Solutions</span>
             <h1>Nos Prestations & Services</h1>
@@ -406,29 +349,23 @@
             <div class="contact-box">
                 <h2>Besoin d'une étude ou d'un devis pour votre projet ?</h2>
                 <p>Exposez-nous votre besoin pour obtenir une proposition adaptée à vos objectifs et à votre budget.</p>
-                <a href="contact.html" class="cta-btn">Demander un devis gratuitement</a>
+                <a href="contact.html" class="email-link">Demander un devis gratuitement</a>
             </div>
         </section>
 
+        <!-- Footer -->
         <footer>
             <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Confidentialité</a></p>
         </footer>
     </div>
 
-    <!-- Script JavaScript pour l'interaction du menu smartphone -->
+    <!-- Script pour le menu mobile -->
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Fermer le menu si l'utilisateur clique en dehors
-        document.addEventListener('click', (event) => {
-            if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
-                navLinks.classList.remove('active');
-            }
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
     </script>
 </body>
