@@ -1,9 +1,18 @@
+   <!-- ******************************************************************************
+To modify : 
+- <title> (head), 
+- Couleur dans <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+************************************************************************************-->
 <!DOCTYPE html>
 <html lang="fr">
+   <!-- ******************************************************************************
+Head
+************************************************************************************-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITRE DE VOTRE PAGE - Zielh Apps</title>
+    <title>Zielh Apps - Développement d'Applications Android Sur Mesure</title>
     
     <!-- Intégration du Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
@@ -76,6 +85,17 @@
             margin-bottom: 2rem;
         }
 
+        /* Logo agrandi x3 (passé de 96px à 288px) */
+        .hero-logo {
+            width: 288px;
+            height: 288px;
+            object-fit: cover;
+            border-radius: 28px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
         .badge {
             display: inline-block;
             background-color: #dbeafe;
@@ -103,7 +123,192 @@
             margin: 0 auto 1.75rem auto;
         }
 
-        /* Contact Box */
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .secondary-button:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
+        }
+
+        h2.section-title {
+            font-size: 1.6rem;
+            margin: 0;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .see-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .see-more:hover {
+            text-decoration: underline;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.75rem 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* App Cards */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header-app {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-icon {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .app-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            background-color: #f1f5f9;
+            color: var(--text-secondary);
+            border-radius: 4px;
+            margin-bottom: 0.25rem;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .card-actions a {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary {
+            background-color: #f1f5f9;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Contact Section */
         .contact-box {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
@@ -132,15 +337,13 @@
             padding: 0.8rem 1.75rem;
             border-radius: var(--radius);
             background-color: var(--accent-color);
-            transition: background-color 0.2s ease, transform 0.1s ease;
+            transition: background-color 0.2s ease;
         }
 
         .email-link:hover {
             background-color: var(--accent-hover);
-            transform: translateY(-1px);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             margin-top: 4rem;
@@ -153,11 +356,6 @@
         footer a {
             color: var(--text-secondary);
             text-decoration: underline;
-            transition: color 0.2s ease;
-        }
-
-        footer a:hover {
-            color: var(--accent-color);
         }
     </style>
 </head>
@@ -173,25 +371,25 @@
                     <span class="text-xl font-bold tracking-tight">Zielh</span>
                 </a>
 
-                <!-- Navigation Desktop -->
+                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Accueil</a>
+                    <a href="index.html" class="text-sm font-medium active-nav-link transition-colors">Accueil</a>
                     <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">À propos</a>
                     <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Services</a>
                     <a href="portfolio.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Portfolio</a>
                     <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Contact</a>
                 </nav>
 
-                <!-- Bouton Menu Mobile -->
+                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Menu Mobile Drawer -->
+        <!-- Mobile Navigation Drawer -->
         <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
-            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Accueil</a>
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-600 bg-blue-50/50 no-underline">Accueil</a>
             <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">À propos</a>
             <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Services</a>
             <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Portfolio</a>
@@ -200,9 +398,35 @@
     </header>
 
     <div class="container">
-        <!-- Main Content : Insérez le contenu de votre page ici -->
-        <main>
-            
+
+   <!-- ******************************************************************************
+Main content specific to the page
+************************************************************************************-->
+        <!-- Hero Section -->
+
+
+        <!-- Main Content -->
+
+
+
+
+   <!-- ******************************************************************************
+Foot
+************************************************************************************-->
+
+
+
+
+
+
+
+
+            <!-- Contact Box -->
+            <section class="contact-box">
+                <h2>Un projet en tête ?</h2>
+                <p>N'hésitez pas à nous contacter pour échanger sur vos besoins et obtenir une étude personnalisée.</p>
+                <a href="contact.html" class="email-link">Prendre contact</a>
+            </section>
         </main>
 
         <!-- Footer -->
