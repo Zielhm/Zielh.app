@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio & Réalisations - Zielh Apps</title>
     
-    <!-- Favicon -->
+    <!-- Favicon dans l'en-tête -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
 
     <style>
@@ -40,7 +40,7 @@
             margin: 0 auto;
         }
 
-        /* Navigation Header */
+        /* Navigation Header Sans Logo Image */
         nav.navbar {
             display: flex;
             justify-content: space-between;
@@ -48,29 +48,23 @@
             margin-bottom: 2.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
             text-decoration: none;
             color: var(--text-primary);
             font-weight: 800;
             font-size: 1.25rem;
-        }
-
-        .nav-logo img {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            object-fit: cover;
+            letter-spacing: -0.02em;
         }
 
         .nav-links {
             display: flex;
             gap: 1.5rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -121,15 +115,9 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 2rem;
             margin-bottom: 3.5rem;
-        }
-
-        @media (max-width: 500px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .project-card {
@@ -154,6 +142,7 @@
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 1rem;
+            gap: 0.5rem;
         }
 
         .project-title-group {
@@ -191,6 +180,7 @@
             border-radius: 6px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            white-space: nowrap;
         }
 
         .tag-offline {
@@ -247,9 +237,11 @@
             color: var(--accent-color);
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.2s ease;
         }
 
         a.link:hover {
+            color: var(--accent-hover);
             text-decoration: underline;
         }
 
@@ -291,6 +283,7 @@
             border-color: #60a5fa;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             margin-top: 4rem;
@@ -299,18 +292,42 @@
             border-top: 1px solid var(--border-color);
             padding-top: 2rem;
         }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            nav.navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
 
-        <!-- Navigation -->
+        <!-- Navigation textuelle (Logo image réservé à la page d'accueil) -->
         <nav class="navbar">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
-                <span>Zielh</span>
-            </a>
+            <a href="index.html" class="nav-logo">Zielh Apps</a>
             <div class="nav-links">
                 <a href="index.html">Accueil</a>
                 <a href="about.html">À propos</a>
@@ -435,8 +452,9 @@
             </div>
         </section>
 
+        <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html" class="link">Mentions Légales</a> | <a href="privacy.html" class="link">Confidentialité</a></p>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Confidentialité</a></p>
         </footer>
     </div>
 
