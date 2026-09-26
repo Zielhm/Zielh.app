@@ -389,47 +389,93 @@
     </header>
 
     <div class="container">
-        <!-- Hero Section -->
+           <!-- Hero Section (Logo central agrandi 3x) -->
         <header class="hero">
-            <span class="badge">Studio Indépendant</span>
-            <h1>Développement d'Applications Android Sur Mesure</h1>
-            <p class="subtitle">Conception d'outils mobiles ergonomiques, performants et adaptés à vos besoins spécifiques.</p>
+            <img src="assets/image/logo.jpg" alt="Zielh Apps Logo" class="hero-logo">
+            <br>
+            <span class="badge">Studio de Développement Indépendant</span>
+            <h1>Des Applications Mobile Utiles, Rapides & Collaboratives</h1>
+            <p class="subtitle">Nous concevons des applications Android haute performance basées sur une philosophie <strong>Offline-First</strong>. Vos applications restent 100% fonctionnelles hors-ligne, avec la possibilité d'intégrer des fonctionnalités en ligne sécurisées via Firebase pour le partage de données multi-utilisateurs.</p>
             <div class="hero-actions">
-                <a href="contact.html" class="cta-button">Discuter d'un projet</a>
-                <a href="portfolio.html" class="secondary-button">Voir les réalisations</a>
+                <a href="portfolio.html" class="cta-button">Découvrir nos créations</a>
+                <a href="contact.html" class="secondary-button">Demander un devis</a>
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main>
-            <!-- Services Section -->
-            <section>
-                <div class="section-header">
-                    <h2 class="section-title">Ce que nous proposons</h2>
+        <!-- Piliers & Savoir-faire -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">Notre Engagement Technique</h2>
+            </div>
+            <div class="grid">
+                <div class="feature-card">
+                    <h3>📱 Android Natif & Performances</h3>
+                    <p>Développement moderne en Kotlin garantissant une réactivité immédiate et un contrôle total sur l'appareil.</p>
                 </div>
-                <div class="grid">
-                    <div class="feature-card">
-                        <h3>Applications Mobiles</h3>
-                        <p>Développement d'applications Android natives légères, réactives et sécurisées.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Scripts & Automatisation</h3>
-                        <p>Création d'outils sur mesure pour optimiser vos workflows et gérer vos données.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Prototypage Rapide</h3>
-                        <p>Transformation de vos idées en prototypes fonctionnels pour valider vos concepts.</p>
-                    </div>
+                <div class="feature-card">
+                    <h3>🔒 Philosophie Offline-First</h3>
+                    <p>Vos applications fonctionnent de manière 100% autonome et locale. L'accès réseau n'est requis que lorsque vous choisissez d'interconnecter vos données.</p>
                 </div>
-            </section>
+                <div class="feature-card">
+                    <h3>☁️ Cloud & Synchronisation Sécurisée</h3>
+                    <p>Intégration sur mesure avec Firebase (Authentication, Firestore, Security Rules) pour partager des données en groupe (ex. matériel agricole, données d'équipe) en toute sécurité.</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- Contact Box -->
-            <section class="contact-box">
-                <h2>Un projet en tête ?</h2>
-                <p>N'hésitez pas à nous contacter pour échanger sur vos besoins et obtenir une étude personnalisée.</p>
+        <!-- Applications Vitrines -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">Projets & Réalisations</h2>
+                <a href="portfolio.html" class="see-more">Tout voir →</a>
+            </div>
+            <div class="grid">
+                <!-- BrainUp -->
+                <article class="card">
+                    <div>
+                        <div class="card-header-app">
+                            <img src="assets/image/logo.jpg" alt="BrainUp Icon" class="app-icon">
+                            <div>
+                                <span class="app-tag">Outils / Utility</span>
+                                <h3>BrainUp : Réveil & Quizz</h3>
+                            </div>
+                        </div>
+                        <p>Un réveil intelligent et configurable combiné à des quiz stimulants pour réveiller votre esprit dès le matin. Fonctionne entièrement hors-ligne sans collecte de données.</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="portfolio.html" class="btn-secondary">Détails</a>
+                        <a href="privacy.html" class="btn-secondary">Confidentialité</a>
+                    </div>
+                </article>
+
+                <!-- AgriCoop -->
+                <article class="card">
+                    <div>
+                        <div class="card-header-app">
+                            <img src="assets/image/agricoop.jpg" alt="AgriCoop Icon" class="app-icon">
+                            <div>
+                                <span class="app-tag">Solution Métier & Cloud</span>
+                                <h3>AgriCoop</h3>
+                            </div>
+                        </div>
+                        <p>Application collaborative permettant à plusieurs agriculteurs et membres d'une coopérative de partager des informations en temps réel sur leurs équipements et leur gestion de matériel via Firebase.</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="portfolio.html" class="btn-secondary">Détails</a>
+                        <a href="privacy.html" class="btn-secondary">Confidentialité</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Call To Action -->
+        <section id="contact">
+            <div class="contact-box">
+                <h2>Un projet d'application mobile ?</h2>
+                <p>Que ce soit pour une application 100% hors-ligne ou un outil collaboratif sécurisé avec authentification et base de données cloud, échangeons sur votre projet.</p>
                 <a href="contact.html" class="email-link">Prendre contact</a>
-            </section>
-        </main>
+            </div>
+        </section>
 
         <!-- Footer -->
         <footer>
