@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree of Life — Politique de Confidentialité | Zielh Apps</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-green-100 selection:text-green-900">
+
+    <!-- Header / Navbar Responsive -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group text-slate-900 no-underline">
+                    <img src="assets/image/favicon.jpg" alt="Zielh Logo" class="w-9 h-9 rounded-lg object-cover border border-slate-200 group-hover:scale-105 transition-transform duration-200" onerror="this.onerror=null; this.src='https://placehold.co/100x100/16a34a/ffffff?text=Z';">
+                    <span class="text-xl font-bold tracking-tight">Zielh</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Accueil</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">À propos</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Services</a>
+            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Portfolio</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full flex-grow">
+        <article class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 shadow-sm">
+            
+            <!-- Page Header -->
+            <header class="border-b border-slate-200 pb-8 mb-8">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-100 mb-4">
+                    <i class="fa-solid fa-mobile-screen-button text-brand-600"></i> Application Mobile
+                </span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">Tree of Life</h1>
+                <p class="text-lg text-slate-600">Politique de Confidentialité</p>
+                <p class="text-xs text-slate-400 mt-2">Dernière mise à jour : 26 septembre 2026</p>
+            </header>
+
+            <!-- SECTION 1 : COLLECTE ET UTILISATION DES DONNÉES -->
+            <section id="data-collection" class="mb-10">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+                    <span class="text-brand-600">1.</span> Collecte et Utilisation des Données / Data Collection & Use
+                </h2>
+                <div class="space-y-4 text-slate-600 leading-relaxed">
+                    <p>
+                        L'application <strong class="text-slate-900 font-semibold">Tree of Life</strong> est conçue pour fonctionner entièrement hors-ligne (local-first). Nous ne collectons, ne transmets, ne stockons, ne suivons et ne partageons aucune donnée personnelle, identifiant d'appareil ou information d'utilisation. Toutes vos notes, entrées de journal, images et préférences restent stockées exclusivement sur votre appareil. Aucun échange de données vers un serveur distant n'est effectué.
+                    </p>
+                    <p class="text-sm text-slate-500 italic bg-slate-50 p-4 rounded-lg border border-slate-100">
+                        The Tree of Life application is designed to operate completely offline (local-first). We do not collect, transmit, store, track, or share any personal data, device identifiers, or usage information. All of your notes, journal entries, images, and preferences remain stored exclusively on your device. No data exchange with remote servers takes place.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SECTION 2 : AUTORISATIONS REQUISES -->
+            <section id="permissions" class="mb-10">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+                    <span class="text-brand-600">2.</span> Autorisations Requises / Permissions Requested
+                </h2>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    Tree of Life demande uniquement les autorisations système strictement nécessaires au bon fonctionnement local de l'application :
+                </p>
+                <ul class="space-y-3 text-slate-600 pl-1">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-bell text-brand-500 mt-1 shrink-0 text-sm"></i>
+                        <div>
+                            <span class="font-mono text-xs font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">POST_NOTIFICATIONS</span>
+                            <p class="text-sm text-slate-600 mt-0.5">Pour vous afficher les rappels de programmation ou de journalisation configurés. <span class="text-slate-400 italic">(To display your scheduled reminders or journaling prompts)</span></p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-power-off text-brand-500 mt-1 shrink-0 text-sm"></i>
+                        <div>
+                            <span class="font-mono text-xs font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">RECEIVE_BOOT_COMPLETED</span>
+                            <p class="text-sm text-slate-600 mt-0.5">Pour reprogrammer vos rappels automatiques si l'appareil redémarre. <span class="text-slate-400 italic">(To reschedule your reminders if the device restarts)</span></p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-folder-open text-brand-500 mt-1 shrink-0 text-sm"></i>
+                        <div>
+                            <span class="font-mono text-xs font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">READ_EXTERNAL_STORAGE / READ_MEDIA_IMAGES</span>
+                            <p class="text-sm text-slate-600 mt-0.5">Permet uniquement de sélectionner des images locales pour les joindre à vos notes Markdown. <span class="text-slate-400 italic">(To allow selecting local images to attach to your Markdown notes)</span></p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SECTION 3 : CONTACT -->
+            <section id="contact">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+                    <span class="text-brand-600">3.</span> Contact
+                </h2>
+                
+                <div class="bg-brand-50/60 border border-brand-200 rounded-xl p-6 text-slate-800">
+                    <h3 class="text-base font-bold text-brand-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-envelope-circle-check text-brand-600"></i> Une question concernant cette politique ?
+                    </h3>
+                    <p class="text-slate-700 text-sm mb-3">Pour toute question ou demande de précision, vous pouvez nous contacter directement :</p>
+                    <div class="bg-white p-4 rounded-lg border border-brand-100 text-sm shadow-sm">
+                        <p><strong class="text-slate-900">E-mail de contact :</strong> <a href="mailto:contact.zielh.app@gmail.com" class="text-brand-600 hover:text-brand-700 font-semibold underline underline-offset-2">contact.zielh.app@gmail.com</a></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-sm text-slate-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | 
+                <a href="mentions-legales.html" class="hover:text-slate-800 underline transition-colors">Mentions Légales</a> | 
+                <a href="privacy.html" class="hover:text-slate-800 underline transition-colors">Politiques de Confidentialité</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script pour le menu mobile -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
