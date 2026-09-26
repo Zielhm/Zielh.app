@@ -8,6 +8,29 @@
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
 
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -33,62 +56,18 @@
             color: var(--text-primary);
             line-height: 1.6;
             margin: 0;
-            padding: 2rem 1rem;
+            padding-bottom: 2rem;
         }
 
         .container {
             max-width: 960px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
-        /* Navigation Header */
-        nav.navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 800;
-            font-size: 1.25rem;
-        }
-
-        .nav-logo img {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            object-fit: cover;
-            border: 1px solid var(--border-color);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent-color);
+        .active-nav-link {
+            color: var(--accent-color) !important;
+            font-weight: 600;
         }
 
         /* Content Card */
@@ -199,40 +178,54 @@
             color: var(--accent-color);
         }
 
-        /* Responsive */
         @media (max-width: 640px) {
-            body {
-                padding: 1rem 0.75rem;
-            }
             .content-card {
                 padding: 1.5rem 1.25rem;
-            }
-            nav.navbar {
-                flex-direction: column;
-                align-items: flex-start;
             }
         }
     </style>
 </head>
-<body>
+<body class="selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Header / Navbar Responsive -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 mb-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group text-slate-900 no-underline">
+                    <img src="assets/image/favicon.jpg" alt="Zielh Logo" class="w-9 h-9 rounded-lg object-cover border border-slate-200 group-hover:scale-105 transition-transform duration-200" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2563eb/ffffff?text=Z';">
+                    <span class="text-xl font-bold tracking-tight">Zielh</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Accueil</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">À propos</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Services</a>
+                    <a href="portfolio.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Portfolio</a>
+                    <a href="privacy.html" class="text-sm font-medium active-nav-link transition-colors">Confidentialité</a>
+                    <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Services</a>
+            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Portfolio</a>
+            <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-600 bg-blue-50/50 no-underline">Confidentialité</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Contact</a>
+        </div>
+    </header>
 
     <div class="container">
-
-        <!-- Navigation Navbar -->
-        <nav class="navbar">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
-                <span>Zielh Apps</span>
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Accueil</a>
-                <a href="about.html">À propos</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="privacy.html" class="active">Confidentialité</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
 
         <!-- Main Content -->
         <main class="content-card">
@@ -267,5 +260,14 @@
 
     </div>
 
+    <!-- Script pour le menu mobile -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
