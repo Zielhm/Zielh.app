@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio & Réalisations - Zielh Apps</title>
     
-    <!-- Favicon dans l'en-tête -->
+    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
@@ -32,58 +55,25 @@
             color: var(--text-primary);
             line-height: 1.6;
             margin: 0;
-            padding: 2rem 1rem;
+            padding-bottom: 2rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
-        /* Navigation Header Sans Logo Image */
-        nav.navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .nav-logo {
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 800;
-            font-size: 1.25rem;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent-color);
+        .active-nav-link {
+            color: var(--accent-color) !important;
+            font-weight: 600;
         }
 
         /* Hero Section */
         header.hero {
             text-align: center;
             padding: 1rem 1rem 3rem 1rem;
+            margin-bottom: 1rem;
         }
 
         .badge {
@@ -103,6 +93,7 @@
             margin: 0 0 1rem 0;
             color: var(--text-primary);
             letter-spacing: -0.025em;
+            line-height: 1.2;
         }
 
         p.subtitle {
@@ -112,12 +103,18 @@
             margin: 0 auto;
         }
 
-        /* Projects Section */
+        /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.75rem;
             margin-bottom: 3.5rem;
+        }
+
+        @media (max-width: 500px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .project-card {
@@ -164,6 +161,7 @@
             height: 40px;
             border-radius: 8px;
             object-fit: cover;
+            border: 1px solid var(--border-color);
         }
 
         .project-title {
@@ -200,7 +198,7 @@
 
         .project-description {
             color: var(--text-secondary);
-            font-size: 0.975rem;
+            font-size: 0.95rem;
             margin-bottom: 1.25rem;
             flex-grow: 1;
         }
@@ -250,7 +248,7 @@
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
             border-radius: var(--radius);
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
@@ -267,20 +265,19 @@
 
         .email-link {
             display: inline-block;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            color: #60a5fa;
+            color: #ffffff;
             text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid #334155;
+            padding: 0.8rem 1.75rem;
             border-radius: var(--radius);
-            background-color: rgba(255, 255, 255, 0.05);
-            transition: background-color 0.2s ease, border-color 0.2s ease;
+            background-color: var(--accent-color);
+            transition: background-color 0.2s ease, transform 0.1s ease;
         }
 
         .email-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: #60a5fa;
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
         }
 
         /* Footer */
@@ -302,40 +299,47 @@
         footer a:hover {
             color: var(--accent-color);
         }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-            body {
-                padding: 1rem 0.75rem;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            nav.navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-        }
     </style>
 </head>
-<body>
+<body class="selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Header / Navbar Responsive -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 mb-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group text-slate-900 no-underline">
+                    <img src="assets/image/favicon.jpg" alt="Zielh Logo" class="w-9 h-9 rounded-lg object-cover border border-slate-200 group-hover:scale-105 transition-transform duration-200" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2563eb/ffffff?text=Z';">
+                    <span class="text-xl font-bold tracking-tight">Zielh</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Accueil</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">À propos</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Services</a>
+                    <a href="portfolio.html" class="text-sm font-medium active-nav-link transition-colors">Portfolio</a>
+                    <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Services</a>
+            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-600 bg-blue-50/50 no-underline">Portfolio</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Contact</a>
+        </div>
+    </header>
 
     <div class="container">
-
-        <!-- Navigation textuelle (Logo image réservé à la page d'accueil) -->
-        <nav class="navbar">
-            <a href="index.html" class="nav-logo">Zielh Apps</a>
-            <div class="nav-links">
-                <a href="index.html">Accueil</a>
-                <a href="about.html">À propos</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html" class="active">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
 
         <!-- Hero -->
         <header class="hero">
@@ -398,7 +402,7 @@
                     <div class="project-header">
                         <div class="project-title-group">
                             <span class="project-icon">
-                                <img src="assets/image/coqpit.jpg" alt="Coq'Pit Logo">
+                                <img src="assets/image/coqpit.jpg" alt="Coq'Pit Logo" onerror="this.onerror=null; this.parentNode.innerHTML='🐓';">
                             </span>
                             <h2 class="project-title">Coq'Pit</h2>
                         </div>
@@ -421,7 +425,7 @@
                     <div class="project-header">
                         <div class="project-title-group">
                             <span class="project-icon">
-                                <img src="assets/image/agricoop.jpg" alt="AgriCoop Logo">
+                                <img src="assets/image/agricoop.jpg" alt="AgriCoop Logo" onerror="this.onerror=null; this.parentNode.innerHTML='🚜';">
                             </span>
                             <h2 class="project-title">AgriCoop</h2>
                         </div>
@@ -448,7 +452,7 @@
             <div class="contact-box">
                 <h2>Vous avez un besoin spécifique ?</h2>
                 <p>Nous développons des outils sur mesure adaptés à vos contraintes de terrain ou d'organisation.</p>
-                <a href="mailto:contact.zielh.app@gmail.com" class="email-link">contact.zielh.app@gmail.com</a>
+                <a href="contact.html" class="email-link">Nous contacter</a>
             </div>
         </section>
 
@@ -458,5 +462,14 @@
         </footer>
     </div>
 
+    <!-- Script pour le menu mobile -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
