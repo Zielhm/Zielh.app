@@ -48,6 +48,7 @@
             margin-bottom: 2.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
+            position: relative;
         }
 
         .nav-logo {
@@ -58,6 +59,7 @@
             color: var(--text-primary);
             font-weight: 800;
             font-size: 1.25rem;
+            z-index: 1001;
         }
 
         .nav-logo img {
@@ -65,6 +67,24 @@
             height: 32px;
             border-radius: 6px;
             object-fit: cover;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Bouton Menu Smartphone (Hamburger) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+            color: var(--text-primary);
+        }
+
+        .menu-toggle svg {
+            width: 28px;
+            height: 28px;
+            display: block;
         }
 
         .nav-links {
@@ -84,6 +104,40 @@
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--accent-color);
+        }
+
+        /* Responsive Navbar pour Smartphone */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--card-bg);
+                border: 1px solid var(--border-color);
+                border-radius: var(--radius);
+                padding: 1.25rem;
+                box-shadow: var(--shadow-hover);
+                gap: 1rem;
+                z-index: 1000;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0;
+                width: 100%;
+                font-size: 1.05rem;
+            }
         }
 
         /* Hero Section */
@@ -241,13 +295,22 @@
 
     <div class="container">
 
-        <!-- Barre de Navigation -->
+        <!-- Barre de Navigation avec bouton Hamburger -->
         <nav class="navbar">
             <a href="index.html" class="nav-logo">
-                <img src="assets/image/favicon.jpg" alt="Zielh Favicon">
-                <span>Zielh</span>
+                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
+                <span>Zielh Apps</span>
             </a>
-            <div class="nav-links">
+
+            <!-- Bouton Menu Mobile -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Liens de Navigation -->
+            <div class="nav-links" id="navLinks">
                 <a href="index.html">Accueil</a>
                 <a href="about.html" class="active">À propos</a>
                 <a href="services.html">Services</a>
@@ -310,6 +373,23 @@
             <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Confidentialité</a></p>
         </footer>
     </div>
+
+    <!-- Script JavaScript pour l'interaction du menu smartphone -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fermer le menu si l'utilisateur clique en dehors
+        document.addEventListener('click', (event) => {
+            if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 
 </body>
 </html>
