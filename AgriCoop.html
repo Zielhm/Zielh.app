@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriCoop — Confidentialité et Gestion du Compte | Zielh Apps</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
 
@@ -30,190 +30,25 @@
 
     <!-- Font Awesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --accent-color: #2563eb;
-            --accent-hover: #1d4ed8;
-            --border-color: #e2e8f0;
-            --code-bg: #f1f5f9;
-            --radius: 12px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            
-            /* Couleurs d'alerte / encadré d'action */
-            --box-bg: #eff6ff;
-            --box-border: #3b82f6;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            margin: 0;
-            padding-bottom: 2rem;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .active-nav-link {
-            color: var(--accent-color) !important;
-            font-weight: 600;
-        }
-
-        /* Content Card */
-        .content-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 2.5rem 2rem;
-            box-shadow: var(--shadow);
-            margin-bottom: 3rem;
-        }
-
-        .page-header {
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #dbeafe;
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 0.35rem 0.85rem;
-            border-radius: 9999px;
-            margin-bottom: 0.75rem;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0 0 0.5rem 0;
-            color: var(--text-primary);
-            letter-spacing: -0.025em;
-        }
-
-        p.subtitle {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            margin: 0;
-        }
-
-        h2 {
-            font-size: 1.35rem;
-            color: var(--text-primary);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 1.25rem;
-            font-size: 1rem;
-        }
-
-        ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Encart Procédure de demande */
-        .action-box {
-            background-color: var(--box-bg);
-            border-left: 4px solid var(--box-border);
-            padding: 1.25rem 1.5rem;
-            border-radius: 6px;
-            margin: 1.5rem 0;
-        }
-
-        .action-box h3 {
-            margin-top: 0;
-            color: var(--text-primary);
-        }
-
-        .action-box p {
-            margin-bottom: 0.5rem;
-        }
-
-        .action-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        a.link {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        a.link:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
-        }
-
-        footer a {
-            color: var(--text-secondary);
-            text-decoration: underline;
-        }
-    </style>
 </head>
-<body class="selection:bg-blue-100 selection:text-blue-900">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-blue-100 selection:text-blue-900">
 
     <!-- Header / Navbar Responsive -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 mb-8">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo textuel homogène -->
-                <a href="index.html" class="flex items-center space-x-3 group text-slate-900 no-underline">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 text-slate-900 hover:text-brand-600 transition-colors">
                     <span class="text-xl font-bold tracking-tight">Zielh Apps</span>
                 </a>
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Accueil</a>
-                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">À propos</a>
-                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Services</a>
-                    <a href="portfolio.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Portfolio</a>
-                    <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Contact</a>
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Accueil</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">À propos</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Contact</a>
                 </nav>
 
                 <!-- Mobile Menu Button -->
@@ -225,73 +60,113 @@
 
         <!-- Mobile Navigation Drawer -->
         <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
-            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Accueil</a>
-            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">À propos</a>
-            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Services</a>
-            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Portfolio</a>
-            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Contact</a>
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Services</a>
+            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Portfolio</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Contact</a>
         </div>
     </header>
 
-    <div class="container">
-
-        <!-- Main Content -->
-        <main class="content-card">
-            <header class="page-header">
-                <span class="badge">Solution Métier</span>
-                <h1>AgriCoop</h1>
-                <p class="subtitle">Politique de Confidentialité et Suppression des Données Utilisateur</p>
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full flex-grow">
+        <article class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 shadow-sm">
+            
+            <!-- Page Header -->
+            <header class="border-b border-slate-200 pb-8 mb-8">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-100 mb-4">
+                    <i class="fa-solid fa-shield-halved text-brand-600"></i> Solution Métier
+                </span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">AgriCoop</h1>
+                <p class="text-lg text-slate-600">Politique de Confidentialité et Suppression des Données Utilisateur</p>
             </header>
 
             <!-- SECTION 1 : POLITIQUE DE CONFIDENTIALITÉ -->
-            <section id="privacy">
-                <h2>1. Politique de Confidentialité</h2>
-                <p>Cette politique explique comment l'application <strong>AgriCoop</strong> collecte, utilise et protège vos données personnelles.</p>
+            <section id="privacy" class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+                    <span class="text-brand-600">1.</span> Politique de Confidentialité
+                </h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">Cette politique explique comment l'application <strong class="text-slate-900 font-semibold">AgriCoop</strong> collecte, utilise et protège vos données personnelles.</p>
 
-                <h3>Données collectées</h3>
-                <p>Dans le cadre de la gestion du matériel partagé, nous collectons les informations suivantes :</p>
-                <ul>
-                    <li><strong>Informations d'identification :</strong> Nom, prénom, adresse e-mail, numéro de téléphone.</li>
-                    <li><strong>Identifiants techniques :</strong> Identifiant unique d'utilisateur (UID Firebase).</li>
-                    <li><strong>Données d'utilisation :</strong> Historique de vos réservations, déclarations d'incidents et relevés de compteurs sur les équipements.</li>
+                <h3 class="text-lg font-semibold text-slate-900 mb-3">Données collectées</h3>
+                <p class="text-slate-600 mb-3">Dans le cadre de la gestion du matériel partagé, nous collectons les informations suivantes :</p>
+                <ul class="space-y-2 text-slate-600 mb-6 pl-2">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-brand-500 mt-1 shrink-0 text-sm"></i>
+                        <span><strong class="text-slate-800">Informations d'identification :</strong> Nom, prénom, adresse e-mail, numéro de téléphone.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-brand-500 mt-1 shrink-0 text-sm"></i>
+                        <span><strong class="text-slate-800">Identifiants techniques :</strong> Identifiant unique d'utilisateur (UID Firebase).</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-brand-500 mt-1 shrink-0 text-sm"></i>
+                        <span><strong class="text-slate-800">Données d'utilisation :</strong> Historique de vos réservations, déclarations d'incidents et relevés de compteurs sur les équipements.</span>
+                    </li>
                 </ul>
 
-                <h3>Utilisation et hébergement des données</h3>
-                <p>Vos données sont exclusivement utilisées pour assurer le service de réservation et le suivi du matériel au sein de la coopérative. Elles sont hébergées de manière sécurisée sur les infrastructures <strong>Google Firebase (Firestore et Firebase Authentication)</strong>. Aucune donnée n'est vendue ni transmise à des tiers à des fins commerciales.</p>
+                <h3 class="text-lg font-semibold text-slate-900 mb-3">Utilisation et hébergement des données</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Vos données sont exclusivement utilisées pour assurer le service de réservation et le suivi du matériel au sein de la coopérative. Elles sont hébergées de manière sécurisée sur les infrastructures <strong class="text-slate-800 font-semibold">Google Firebase (Firestore et Firebase Authentication)</strong>. Aucune donnée n'est vendue ni transmise à des tiers à des fins commerciales.
+                </p>
 
-                <h3>Sécurité</h3>
-                <p>Toutes les communications entre l'application et la base de données sont chiffrées en transit via le protocole HTTPS / TLS.</p>
+                <h3 class="text-lg font-semibold text-slate-900 mb-3">Sécurité</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Toutes les communications entre l'application et la base de données sont chiffrées en transit via le protocole HTTPS / TLS.
+                </p>
             </section>
 
             <!-- SECTION 2 : SUPPRESSION DU COMPTE -->
             <section id="delete">
-                <h2>2. Demande de Suppression de Compte et des Données</h2>
-                <p>Conformément aux règles de protection des données et aux exigences du Google Play Store, vous pouvez demander à tout moment la suppression définitive de votre compte utilisateur <strong>AgriCoop</strong> sans avoir à réinstaller l'application.</p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+                    <span class="text-brand-600">2.</span> Demande de Suppression de Compte et des Données
+                </h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Conformément aux règles de protection des données et aux exigences du Google Play Store, vous pouvez demander à tout moment la suppression définitive de votre compte utilisateur <strong class="text-slate-900 font-semibold">AgriCoop</strong> sans avoir à réinstaller l'application.
+                </p>
 
-                <div class="action-box">
-                    <h3>Procédure de demande :</h3>
-                    <p>Pour faire supprimer votre compte, envoyez simplement un courriel à l'adresse suivante :</p>
-                    <p><strong>E-mail de contact :</strong> <a href="mailto:contact.zielh.app@gmail.com" class="link">contact.zielh.app@gmail.com</a></p>
-                    <p><strong>Objet du message :</strong> Supprimer mon compte AgriCoop</p>
-                    <p><strong>Information requise :</strong> Indiquez l'adresse e-mail associée à votre compte dans l'application.</p>
+                <!-- Action Box -->
+                <div class="bg-brand-50/60 border border-brand-200 rounded-xl p-6 mb-8 text-slate-800">
+                    <h3 class="text-lg font-bold text-brand-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-envelope-circle-check text-brand-600"></i> Procédure de demande :
+                    </h3>
+                    <p class="text-slate-700 mb-4">Pour faire supprimer votre compte, envoyez simplement un courriel à l'adresse suivante :</p>
+                    <div class="bg-white p-4 rounded-lg border border-brand-100 space-y-2 text-sm shadow-sm mb-2">
+                        <p><strong class="text-slate-900">E-mail de contact :</strong> <a href="mailto:contact.zielh.app@gmail.com" class="text-brand-600 hover:text-brand-700 font-semibold underline underline-offset-2">contact.zielh.app@gmail.com</a></p>
+                        <p><strong class="text-slate-900">Objet du message :</strong> <span class="bg-slate-100 px-2 py-0.5 rounded font-mono text-xs text-slate-700">Supprimer mon compte AgriCoop</span></p>
+                        <p><strong class="text-slate-900">Information requise :</strong> Indiquez l'adresse e-mail associée à votre compte dans l'application.</p>
+                    </div>
                 </div>
 
-                <h3>Conséquences de la suppression :</h3>
-                <p>Une fois votre demande traitée (sous un délai maximum de 30 jours) :</p>
-                <ul>
-                    <li>Votre profil utilisateur (nom, prénom, e-mail, téléphone) sera définitivement effacé.</li>
-                    <li>Votre identifiant d'authentification Firebase sera supprimé.</li>
-                    <li>Vos réservations passées et à venir seront dissociées de votre identité personnelle.</li>
+                <h3 class="text-lg font-semibold text-slate-900 mb-3">Conséquences de la suppression :</h3>
+                <p class="text-slate-600 mb-3">Une fois votre demande traitée (sous un délai maximum de 30 jours) :</p>
+                <ul class="space-y-2 text-slate-600 pl-2">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-trash-can text-red-500 mt-1 shrink-0 text-sm"></i>
+                        <span>Votre profil utilisateur (nom, prénom, e-mail, téléphone) sera définitivement effacé.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-trash-can text-red-500 mt-1 shrink-0 text-sm"></i>
+                        <span>Votre identifiant d'authentification Firebase sera supprimé.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-link-slash text-slate-400 mt-1 shrink-0 text-sm"></i>
+                        <span>Vos réservations passées et à venir seront dissociées de votre identité personnelle.</span>
+                    </li>
                 </ul>
             </section>
-        </main>
+        </article>
+    </main>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Politiques de Confidentialité</a></p>
-        </footer>
-
-    </div>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-sm text-slate-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | 
+                <a href="mentions-legales.html" class="hover:text-slate-800 underline transition-colors">Mentions Légales</a> | 
+                <a href="privacy.html" class="hover:text-slate-800 underline transition-colors">Politiques de Confidentialité</a>
+            </p>
+        </div>
+    </footer>
 
     <!-- Script pour le menu mobile -->
     <script>
