@@ -49,6 +49,8 @@
             margin-bottom: 2.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .nav-logo {
@@ -72,6 +74,7 @@
             display: flex;
             gap: 1.5rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -117,9 +120,15 @@
         h1 {
             font-size: 2rem;
             font-weight: 800;
-            margin: 0;
+            margin: 0 0 0.5rem 0;
             color: var(--text-primary);
             letter-spacing: -0.025em;
+        }
+
+        .last-updated {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin: 0;
         }
 
         h2 {
@@ -161,9 +170,11 @@
             color: var(--accent-color);
             text-decoration: none;
             font-weight: 600;
+            transition: color 0.2s ease;
         }
 
         a.contact-link:hover {
+            color: var(--accent-hover);
             text-decoration: underline;
         }
 
@@ -180,6 +191,25 @@
         footer a {
             color: var(--text-secondary);
             text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            .content-card {
+                padding: 1.5rem 1.25rem;
+            }
+            nav.navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -198,6 +228,7 @@
                 <a href="about.html">À propos</a>
                 <a href="services.html">Services</a>
                 <a href="portfolio.html">Portfolio</a>
+                <a href="privacy.html" class="active">Confidentialité</a>
                 <a href="contact.html">Contact</a>
             </div>
         </nav>
@@ -207,6 +238,7 @@
             <header class="page-header">
                 <span class="badge">Application Mobile</span>
                 <h1>Politique de Confidentialité – BrainUp</h1>
+                <p class="last-updated">Dernière mise à jour : 26 septembre 2026</p>
             </header>
 
             <section>
@@ -229,7 +261,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Politiques de Confidentialité</a></p>
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Politique de Confidentialité</a></p>
         </footer>
 
     </div>
