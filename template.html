@@ -1,20 +1,13 @@
-   <!-- ******************************************************************************
-To modify : 
-- <title> (head), 
-- Couleur dans <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
-************************************************************************************-->
 <!DOCTYPE html>
 <html lang="fr">
-   <!-- ******************************************************************************
-Head
-************************************************************************************-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zielh Apps - Développement d'Applications Android Sur Mesure</title>
     
-    <!-- Intégration du Favicon -->
+    <!-- EDIT 1: Mettre à jour le titre de la page pour le SEO et l'onglet du navigateur -->
+    <title>[TITRE DE LA PAGE] - Zielh Apps</title>
+    
+    <!-- EDIT 2: Lien vers le favicon si le chemin change -->
     <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg">
 
     <!-- Tailwind CSS CDN -->
@@ -85,8 +78,10 @@ Head
             margin-bottom: 2rem;
         }
 
-        /* Logo agrandi x3 (passé de 96px à 288px) */
         .hero-logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
             width: 288px;
             height: 288px;
             object-fit: cover;
@@ -365,13 +360,13 @@ Head
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 mb-8">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
+                <!-- Logo Nav -->
                 <a href="index.html" class="flex items-center space-x-3 group text-slate-900 no-underline">
                     <img src="assets/image/favicon.jpg" alt="Zielh Logo" class="w-9 h-9 rounded-lg object-cover border border-slate-200 group-hover:scale-105 transition-transform duration-200" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2563eb/ffffff?text=Z';">
                     <span class="text-xl font-bold tracking-tight">Zielh</span>
                 </a>
 
-                <!-- Desktop Navigation -->
+                <!-- EDIT 3: Déplacer la classe `active-nav-link` vers le lien de la page courante pour le menu Desktop -->
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-sm font-medium active-nav-link transition-colors">Accueil</a>
                     <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">À propos</a>
@@ -380,14 +375,14 @@ Head
                     <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Contact</a>
                 </nav>
 
-                <!-- Mobile Menu Button -->
+                <!-- Bouton Menu Mobile -->
                 <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Navigation Drawer -->
+        <!-- EDIT 4: Déplacer les classes d'activation (`text-blue-600 bg-blue-50/50 font-semibold`) sur le bon lien mobile -->
         <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
             <a href="index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-600 bg-blue-50/50 no-underline">Accueil</a>
             <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">À propos</a>
@@ -399,43 +394,126 @@ Head
 
     <div class="container">
 
-   <!-- ******************************************************************************
-Main content specific to the page
-************************************************************************************-->
-        <!-- Hero Section -->
+        <!-- ================================================================= -->
+        <!-- DEBUT DE DU CONTENU PRINCIPAL                                     -->
+        <!-- ================================================================= -->
 
+        <!-- EDIT 5: Hero Section (Optionnelle ou à adapter selon les pages) -->
+        <header class="hero">
+            <!-- EDIT 5.1: Changer le logo principal ou visuel d'en-tête -->
+            <img src="assets/image/logo.jpg" alt="Zielh Apps Logo" class="hero-logo">
+            <br>
+            <!-- EDIT 5.2: Badge d'en-tête -->
+            <span class="badge">[BADGE / CATEGORIE]</span>
+            <!-- EDIT 5.3: Titre principal H1 -->
+            <h1>[TITRE PRINCIPAL DE LA PAGE]</h1>
+            <!-- EDIT 5.4: Paragraphe / Sous-titre -->
+            <p class="subtitle">[Texte d'introduction de la page. Expliquez en 2 à 3 phrases le sujet principal de cette page.]</p>
+            <!-- EDIT 5.5: Boutons d'action (CTA) -->
+            <div class="hero-actions">
+                <a href="[LIEN_BOUTON_1]" class="cta-button">[Action Principale]</a>
+                <a href="[LIEN_BOUTON_2]" class="secondary-button">[Action Secondaire]</a>
+            </div>
+        </header>
 
-        <!-- Main Content -->
+        <!-- EDIT 6: Section Grille de Fonctionnalités / Piliers -->
+        <section>
+            <div class="section-header">
+                <!-- EDIT 6.1: Titre de la section -->
+                <h2 class="section-title">[Titre de Section - Ex: Nos Services]</h2>
+            </div>
+            <div class="grid">
+                <!-- Bloc Fonctionnalité 1 -->
+                <div class="feature-card">
+                    <h3>[Titre de la carte 1]</h3>
+                    <p>[Description courte du service ou du pilier technique.]</p>
+                </div>
+                <!-- Bloc Fonctionnalité 2 -->
+                <div class="feature-card">
+                    <h3>[Titre de la carte 2]</h3>
+                    <p>[Description courte du service ou du pilier technique.]</p>
+                </div>
+                <!-- Bloc Fonctionnalité 3 -->
+                <div class="feature-card">
+                    <h3>[Titre de la carte 3]</h3>
+                    <p>[Description courte du service ou du pilier technique.]</p>
+                </div>
+                <!-- Vous pouvez dupliquer des blocs <div class="feature-card">...</div> ici -->
+            </div>
+        </section>
 
+        <!-- EDIT 7: Section Grille d'Applications / Projets -->
+        <section>
+            <div class="section-header">
+                <!-- EDIT 7.1: Titre de section et lien externe optionnel -->
+                <h2 class="section-title">[Titre - Ex: Projets Récents]</h2>
+                <a href="portfolio.html" class="see-more">Voir tout →</a>
+            </div>
+            <div class="grid">
+                
+                <!-- CARTE APPLICATION 1 -->
+                <article class="card">
+                    <div>
+                        <div class="card-header-app">
+                            <!-- EDIT 7.2: Icone de l'application -->
+                            <img src="assets/image/logo.jpg" alt="[Nom App] Icon" class="app-icon">
+                            <div>
+                                <!-- EDIT 7.3: Tag & Titre -->
+                                <span class="app-tag">[Catégorie App]</span>
+                                <h3>[Nom de l'Application]</h3>
+                            </div>
+                        </div>
+                        <!-- EDIT 7.4: Description -->
+                        <p>[Description rapide du projet, des fonctionnalités et des technologies utilisées.]</p>
+                    </div>
+                    <!-- EDIT 7.5: Liens de la carte -->
+                    <div class="card-actions">
+                        <a href="[LIEN_DETAILS]" class="btn-secondary">Détails</a>
+                        <a href="privacy.html" class="btn-secondary">Confidentialité</a>
+                    </div>
+                </article>
 
+                <!-- CARTE APPLICATION 2 (Dupliquer le bloc <article class="card"> au besoin) -->
+                <article class="card">
+                    <div>
+                        <div class="card-header-app">
+                            <img src="assets/image/agricoop.jpg" alt="[Nom App] Icon" class="app-icon">
+                            <div>
+                                <span class="app-tag">[Catégorie App]</span>
+                                <h3>[Nom de l'Application]</h3>
+                            </div>
+                        </div>
+                        <p>[Description rapide du projet, des fonctionnalités et des technologies utilisées.]</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="[LIEN_DETAILS]" class="btn-secondary">Détails</a>
+                        <a href="privacy.html" class="btn-secondary">Confidentialité</a>
+                    </div>
+                </article>
 
+            </div>
+        </section>
 
-   <!-- ******************************************************************************
-Foot
-************************************************************************************-->
+        <!-- EDIT 8: Section Banderole d'Appel à l'Action (CTA) -->
+        <section id="contact">
+            <div class="contact-box">
+                <h2>[Titre d'Appel à l'Action]</h2>
+                <p>[Message de conclusion incitant l'utilisateur à prendre contact ou faire une action.]</p>
+                <a href="contact.html" class="email-link">[Texte du Bouton Contact]</a>
+            </div>
+        </section>
 
+        <!-- ================================================================= -->
+        <!-- FIN DU CONTENU PRINCIPAL                                          -->
+        <!-- ================================================================= -->
 
-
-
-
-
-
-
-            <!-- Contact Box -->
-            <section class="contact-box">
-                <h2>Un projet en tête ?</h2>
-                <p>N'hésitez pas à nous contacter pour échanger sur vos besoins et obtenir une étude personnalisée.</p>
-                <a href="contact.html" class="email-link">Prendre contact</a>
-            </section>
-        </main>
-
-        <!-- Footer -->
+        <!-- EDIT 9: Footer (Mise à jour de l'année si besoin) -->
         <footer>
             <p>&copy; 2026 Zielh Apps. Tous droits réservés.</p>
         </footer>
     </div>
 
-    <!-- Script pour le menu mobile -->
+    <!-- Script pour le menu mobile (NE PAS MODIFIER) -->
     <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
