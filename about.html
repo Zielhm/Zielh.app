@@ -72,8 +72,8 @@
         /* Hero Section */
         header.hero {
             text-align: center;
-            padding: 1rem 1rem 3rem 1rem;
-            margin-bottom: 1rem;
+            padding: 2rem 1rem 3.5rem 1rem;
+            margin-bottom: 2rem;
         }
 
         .badge {
@@ -93,23 +93,31 @@
             margin: 0 0 1rem 0;
             color: var(--text-primary);
             letter-spacing: -0.025em;
+            line-height: 1.2;
         }
 
         p.subtitle {
             color: var(--text-secondary);
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 680px;
+            margin: 0 auto 1.75rem auto;
         }
 
         /* Sections */
         section {
-            margin-bottom: 3.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
         }
 
         h2.section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.25rem;
+            font-size: 1.6rem;
+            margin: 0 0 1.5rem 0;
             color: var(--text-primary);
             display: flex;
             align-items: center;
@@ -127,7 +135,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
-            padding: 1.5rem;
+            padding: 1.75rem 1.5rem;
             box-shadow: var(--shadow);
         }
 
@@ -159,6 +167,7 @@
             margin-top: 0;
             font-size: 1.2rem;
             color: var(--text-primary);
+            margin-bottom: 0.5rem;
         }
 
         .scope-card p {
@@ -172,7 +181,7 @@
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
             border-radius: var(--radius);
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
@@ -183,26 +192,24 @@
 
         .contact-box p {
             color: #94a3b8;
-            max-width: 500px;
-            margin: 0 auto 1.5rem auto;
+            max-width: 520px;
+            margin: 0 auto 1.75rem auto;
         }
 
         .email-link {
             display: inline-block;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            color: #60a5fa;
+            color: #ffffff;
             text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid #334155;
+            padding: 0.8rem 1.75rem;
             border-radius: var(--radius);
-            background-color: rgba(255, 255, 255, 0.05);
-            transition: background-color 0.2s ease, border-color 0.2s ease;
+            background-color: var(--accent-color);
+            transition: background-color 0.2s ease;
         }
 
         .email-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: #60a5fa;
+            background-color: var(--accent-hover);
         }
 
         footer {
@@ -220,105 +227,110 @@
         }
     </style>
 </head>
-<body>
+<body class="selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Header / Navbar Responsive -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 mb-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group text-slate-900 no-underline">
+                    <img src="assets/image/favicon.jpg" alt="Zielh Logo" class="w-9 h-9 rounded-lg object-cover border border-slate-200 group-hover:scale-105 transition-transform duration-200" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2563eb/ffffff?text=Z';">
+                    <span class="text-xl font-bold tracking-tight">Zielh</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Accueil</a>
+                    <a href="about.html" class="text-sm font-medium active-nav-link transition-colors">À propos</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Services</a>
+                    <a href="portfolio.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Portfolio</a>
+                    <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors no-underline">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-600 bg-blue-50/50 no-underline">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Services</a>
+            <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Portfolio</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 no-underline">Contact</a>
+        </div>
+    </header>
 
     <div class="container">
-
-        <!-- Barre de Navigation avec bouton Hamburger -->
-        <nav class="navbar">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/image/favicon.jpg" alt="Zielh Logo">
-                <span>Zielh Apps</span>
-            </a>
-
-            <!-- Bouton Menu Mobile -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-
-            <!-- Liens de Navigation -->
-            <div class="nav-links" id="navLinks">
-                <a href="index.html">Accueil</a>
-                <a href="about.html" class="active">À propos</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
-
-        <!-- En-tête Hero -->
+        <!-- Hero Section -->
         <header class="hero">
             <span class="badge">Notre Histoire & Philosophie</span>
             <h1>Qui sommes-nous ?</h1>
             <p class="subtitle">Une démarche indépendante dédiée à la création d'applications utiles, autonomes et respectueuses des utilisateurs.</p>
         </header>
 
-        <!-- Notre Mission & Démarche -->
-        <section>
-            <h2 class="section-title">Notre Démarche</h2>
-            <div class="grid">
-                <div class="feature-card">
-                    <h3>🛠️ Des Outils Utiles & Ciblés</h3>
-                    <p>Nous concevons des solutions sur mesure pour répondre à des besoins précis, qu'il s'agisse de professionnels, d'organisations locales ou d'utilisateurs individuels.</p>
+        <!-- Main Content -->
+        <main>
+            <!-- Notre Mission & Démarche -->
+            <section>
+                <h2 class="section-title">Notre Démarche</h2>
+                <div class="grid">
+                    <div class="feature-card">
+                        <h3>🛠️ Des Outils Utiles & Ciblés</h3>
+                        <p>Nous concevons des solutions sur mesure pour répondre à des besoins précis, qu'il s'agisse de professionnels, d'organisations locales ou d'utilisateurs individuels.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🚫 Solutions épurées & saines</h3>
+                        <p>Nous développons des alternatives épurées face aux applications du marché devenues surchargées d'annonces, de traceurs ou d'abonnements abusifs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔍 Relecture du Code Assistée par IA</h3>
+                        <p>Nous intégrons des outils d'intelligence artificielle avancés dans nos processus d'assurance qualité afin d'auditer, relire et optimiser la stabilité de nos lignes de code.</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <h3>🚫 Solutions épurées & saines</h3>
-                    <p>Nous développons des alternatives épurées face aux applications du marché devenues surchargées d'annonces, de traceurs ou d'abonnements abusifs.</p>
+            </section>
+
+            <!-- Notre Périmètre d'Intervention -->
+            <section>
+                <h2 class="section-title">Périmètre d'Intervention</h2>
+                
+                <div class="scope-card">
+                    <h3>Focus sur les applications métier, scripts et prototypage</h3>
+                    <p>Notre savoir-faire se concentre sur les applications utilitaires, le développement de scripts métier, le prototypage rapide, le fonctionnement hors-ligne (offline-first) et l'ergonomie utilisateur fluide.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>🔍 Relecture du Code Assistée par IA</h3>
-                    <p>Nous intégrons des outils d'intelligence artificielle avancés dans nos processus d'assurance qualité afin d'auditer, relire et optimiser la stabilité de nos lignes de code.</p>
+
+                <div class="scope-card" style="border-left-color: #64748b;">
+                    <h3>Transparence sur nos compétences & limites</h3>
+                    <p>Afin de maintenir des standards élevés sur nos projets, nous faisons le choix explicite de <strong>ne pas développer</strong> d'applications à très haute contrainte réglementaire bancaire ou critique (systèmes de paiement direct style banque en ligne, coffres-forts bancaires agréés).</p>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Notre Périmètre d'Intervention -->
-        <section>
-            <h2 class="section-title">Périmètre d'Intervention</h2>
-            
-            <div class="scope-card">
-                <h3>Focus sur les applications métier, scripts et prototypage</h3>
-                <p>Notre savoir-faire se concentre sur les applications utilitaires, le développement de scripts métier, le prototypage rapide, le fonctionnement hors-ligne (offline-first) et l'ergonomie utilisateur fluide.</p>
-            </div>
-
-            <div class="scope-card" style="border-left-color: #64748b;">
-                <h3>Transparence sur nos compétences & limites</h3>
-                <p>Afin de maintenir des standards élevés sur nos projets, nous faisons le choix explicite de <strong>ne pas développer</strong> d'applications à très haute contrainte réglementaire bancaire ou critique (systèmes de paiement direct style banque en ligne, coffres-forts bancaires agréés).</p>
-            </div>
-        </section>
-
-        <!-- Section Contact / Appel à l'action -->
-        <section id="contact">
-            <div class="contact-box">
+            <!-- Section Contact / Appel à l'action -->
+            <section id="contact" class="contact-box">
                 <h2>Un projet à nous soumettre ?</h2>
                 <p>Que vous ayez besoin d'une application sur mesure pour votre structure, d'un prototype ou d'un outil épuré pour simplifier votre quotidien, nous sommes à votre écoute.</p>
                 <a href="contact.html" class="email-link">Formulaire de contact</a>
-            </div>
-        </section>
+            </section>
+        </main>
 
+        <!-- Footer -->
         <footer>
             <p>&copy; 2026 Zielh Apps. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="privacy.html">Confidentialité</a></p>
         </footer>
     </div>
 
-    <!-- Script JavaScript pour l'interaction du menu smartphone -->
+    <!-- Script pour le menu mobile -->
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Fermer le menu si l'utilisateur clique en dehors
-        document.addEventListener('click', (event) => {
-            if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
-                navLinks.classList.remove('active');
-            }
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
     </script>
-
 </body>
 </html>
