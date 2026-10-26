@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coq'Pit — Confidentialité et Gestion du Compte | Zielh Apps</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/image/favicon.jpg" onerror="this.onerror=null;">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-emerald-100 selection:text-emerald-900">
+
+    <!-- Header / Navbar Responsive -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group text-slate-900 no-underline">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-bold shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-200">
+                        <i class="fa-solid fa-egg text-amber-300 text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-extrabold tracking-tight text-slate-900 leading-none">Coq'Pit</span>
+                        <span class="text-xs font-semibold text-emerald-600 tracking-wider uppercase">par Zielh</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Accueil</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">À propos</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Services</a>
+                    <a href="#privacy" class="text-sm font-semibold text-emerald-600 transition-colors">Confidentialité</a>
+                    <a href="#delete" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Suppression Compte</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Menu principal">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Accueil</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">À propos</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Services</a>
+            <a href="#privacy" class="block px-3 py-2 rounded-md text-base font-medium text-emerald-700 bg-emerald-50">Confidentialité</a>
+            <a href="#delete" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Suppression de compte</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full flex-grow">
+        <article class="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-sm">
+            
+            <!-- Page Header -->
+            <header class="border-b border-slate-200 pb-8 mb-8">
+                <div class="flex flex-wrap items-center gap-2 mb-4">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        <i class="fa-solid fa-shield-halved text-emerald-600"></i> Conforme RGPD & Google Play
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                        <i class="fa-solid fa-feather text-amber-600"></i> Gestion Avicole
+                    </span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Coq'Pit</h1>
+                <p class="text-lg text-slate-600">Politique de Confidentialité, Protection des Données Multi-Tenant et Gestion du Compte Utilisateur</p>
+            </header>
+
+            <!-- SECTION 1 : POLITIQUE DE CONFIDENTIALITÉ -->
+            <section id="privacy" class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+                    <span class="text-emerald-600">1.</span> Politique de Confidentialité
+                </h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Cette politique explique comment l'application mobile <strong class="text-slate-900 font-semibold">Coq'Pit</strong> (développée et éditée par <strong class="text-slate-900">Zielh Apps</strong>) collecte, traite et sécurise vos données dans le cadre de la gestion d'élevages avicoles familiaux et professionnels.
+                </p>
+
+                <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-database text-emerald-600 text-sm"></i> Données collectées
+                </h3>
+                <p class="text-slate-600 mb-4">Dans le cadre du suivi des lots de volailles et de la gestion d'exploitation, nous traitons les données suivantes :</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+                        <div class="flex items-center gap-2 font-semibold text-slate-900 mb-2">
+                            <i class="fa-solid fa-user-check text-emerald-600"></i> Identité & Compte Google
+                        </div>
+                        <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                            <li>Nom d'affichage Google (displayName)</li>
+                            <li>Adresse e-mail valide</li>
+                            <li>Photo de profil Google (URL)</li>
+                            <li>Identifiant Firebase Auth unique (<code class="text-xs bg-slate-200 px-1 py-0.5 rounded">uid</code>)</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+                        <div class="flex items-center gap-2 font-semibold text-slate-900 mb-2">
+                            <i class="fa-solid fa-wheat-awn text-amber-600"></i> Données d'Exploitation Avicole
+                        </div>
+                        <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                            <li>Rattachement d'exploitation (<code class="text-xs bg-slate-200 px-1 py-0.5 rounded">farmId</code>)</li>
+                            <li>Suivi des lots de poules / volailles</li>
+                            <li>Ponte quotidienne & récoltes d'œufs</li>
+                            <li>Registre de santé, mortalité et soins</li>
+                            <li>Dépenses, ventes et bilan financier</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-server text-emerald-600 text-sm"></i> Architecture Multi-Tenant & Hébergement Firebase
+                </h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    Vos données sont hébergées de manière sécurisée sur l'infrastructure <strong class="text-slate-800 font-semibold">Google Firebase (Cloud Firestore & Firebase Authentication)</strong>.
+                </p>
+                <div class="bg-emerald-50/50 border border-emerald-200/80 rounded-2xl p-5 mb-6 text-slate-700">
+                    <h4 class="font-semibold text-emerald-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-lock text-emerald-600"></i> Cloisonnement strict des données (Multi-Tenancy)
+                    </h4>
+                    <p class="text-sm leading-relaxed">
+                        Chaque ferme ou exploitation dispose d'un espace isolé. Grâce à nos règles de sécurité Firestore avancées (<code class="text-xs bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono">isFarmMember(farmId)</code>), les membres d'une ferme ne peuvent en aucun cas accéder aux données d'une autre exploitation. Aucune donnée personnelle ou avicole n'est vendue ni transmise à des tiers.
+                    </p>
+                </div>
+
+                <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-network-wired text-emerald-600 text-sm"></i> Sécurité des transferts
+                </h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Toutes les communications entre l'application Android Coq'Pit et les bases de données Cloud sont chiffrées en transit via les protocoles TLS/HTTPS et sécurisées au repos par l'infrastructure mondiale de Google.
+                </p>
+            </section>
+
+            <!-- SECTION 2 : SUPPRESSION DU COMPTE -->
+            <section id="delete" class="pt-6">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+                    <span class="text-emerald-600">2.</span> Demande de Suppression du Compte et des Données
+                </h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Conformément aux directives du Google Play Store et au Règlement Général sur la Protection des Données (RGPD), vous pouvez demander à tout moment la suppression définitive de votre compte utilisateur <strong class="text-slate-900 font-semibold">Coq'Pit</strong> et la purge de vos identifiants.
+                </p>
+
+                <!-- Action Box -->
+                <div class="bg-gradient-to-br from-emerald-50/80 to-amber-50/50 border border-emerald-200 rounded-2xl p-6 mb-8 text-slate-800 shadow-sm">
+                    <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-envelope-circle-check text-emerald-600 text-xl"></i> Demander la suppression de mes données
+                    </h3>
+                    <p class="text-slate-700 text-sm mb-4">
+                        Vous pouvez soumettre une demande directement par e-mail sans obligation de réinstaller l'application.
+                    </p>
+                    
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 text-sm shadow-sm mb-5">
+                        <p><strong class="text-slate-900">E-mail du support :</strong> <a href="mailto:contact.zielh.app@gmail.com" class="text-emerald-600 hover:text-emerald-700 font-semibold underline underline-offset-2">contact.zielh.app@gmail.com</a></p>
+                        <p><strong class="text-slate-900">Objet suggéré :</strong> <span class="bg-slate-100 px-2 py-0.5 rounded font-mono text-xs text-slate-700">Supprimer mon compte Coq'Pit</span></p>
+                        <p><strong class="text-slate-900">Renseignements :</strong> Indiquez l'adresse e-mail Google avec laquelle vous vous connectez à l'application.</p>
+                    </div>
+
+                    <a href="mailto:contact.zielh.app@gmail.com?subject=Supprimer%20mon%20compte%20Coq'Pit&body=Bonjour,%20je%20souhaite%20demander%20la%20suppression%20définitive%20de%20mon%20compte%20Coq'Pit%20associé%20à%20cet%20e-mail." 
+                       class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all shadow-md shadow-emerald-600/20">
+                        <i class="fa-solid fa-paper-plane"></i> Envoyer la demande par e-mail
+                    </a>
+                </div>
+
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Impact de la suppression sur l'exploitation avicole</h3>
+                <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                    Selon votre rôle au sein de la ferme (<code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded">OWNER</code> ou <code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded">MEMBER</code>), le traitement diffère pour garantir la continuité des autres membres de la famille/coopérative :
+                </p>
+
+                <ul class="space-y-3 text-slate-600 text-sm mb-6 pl-1">
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-trash-can text-red-500 mt-1 shrink-0"></i>
+                        <span><strong class="text-slate-900">Profil individuel :</strong> Votre profil utilisateur (`users/{uid}`) et vos jetons d'authentification Google sont immédiatement et définitivement effacés de Firebase Auth.</span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-user-slash text-amber-600 mt-1 shrink-0"></i>
+                        <span><strong class="text-slate-900">Membre simple (MEMBER) :</strong> Vous êtes retiré de la ferme. Les saisies d'œufs et de soins réalisées restent associées à la ferme sans mention de votre nom.</span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-building-wheat text-slate-500 mt-1 shrink-0"></i>
+                        <span><strong class="text-slate-900">Propriétaire (OWNER) :</strong> Si vous êtes le dernier membre de l'exploitation, l'ensemble du dossier de la ferme (lots, récoltes, finances) est définitivement supprimé de Firestore sous 30 jours.</span>
+                    </li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-sm text-slate-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>&copy; 2026 Zielh Apps. Tous droits réservés. | 
+                <a href="mentions-legales.html" class="hover:text-slate-800 underline transition-colors">Mentions Légales</a> | 
+                <a href="privacy.html" class="hover:text-slate-800 underline transition-colors font-medium text-slate-700">Politiques de Confidentialité Coq'Pit</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script pour le menu mobile -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
